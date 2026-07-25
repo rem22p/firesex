@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 user_pref("about.glean.redesign.enabled", false); //about.glean.redesign.enabled - внутренний переключатель отвечающий за включение нового внешенго вида для функций системы Glean. Херня для корп ИИ - кал.
 
 // privacy.
@@ -51,4 +53,7 @@ user_pref("toolkit.coverage.endpoint.base", ""); //toolkit.coverage.endpoint.bas
 user_pref("datareporting.policy.dataSubmissionEnabled", false); //datareporting.policy.dataSubmissionEnabled - отвечает за политику отправкки данных. Пока этот параметр выключен, mozilla юридически не может собирать и отправлять куда либо телеметрию.
 user_pref("datareporting.healthreport.uploadEnabled", false); //datareporting.healthreport.uploadEnabled - отчет о состояние браузера (использование памяти, время запуска и так далее).
 user_pref("datareporting.usage.uploadEnabled", false); //datareporting.usage.uploadEnabled - отправка статистики использования firefox (сколько вкладок открыто, какие фичи используются и так далее).
-user_pref("");
+
+// browser.
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false); //browser.newtabpage.activity-stream.feeds.telemetry - еще один сборщик данных, в этот раз телеметрия ленты на новой вкладке (рекомендованные вкладки).
+user_pref("browser.newtabpage.activity-stream.telemetry", false); //browser.newtabpage.activity-stream.telemetry - аналогично верхнему префу с небольшими дополнениями.
