@@ -55,6 +55,7 @@ user_pref("datareporting.healthreport.uploadEnabled", false); //datareporting.he
 user_pref("datareporting.usage.uploadEnabled", false); //datareporting.usage.uploadEnabled - отправка статистики использования firefox (сколько вкладок открыто, какие фичи используются и так далее).
 
 // browser.
+user_pref("browser.safebrowsing.downloads.remote.enabled", false); //browser.safebrowsing.downloads.remote.enabled - удаленная проверка скачанных файлов через Google Safe Browsing. Браузер отправляет хэш в гугл на проверку на вирусы.
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); //browser.crashReports.unsubmittedCheck.autoSubmit2 - отправка не отправленных ранее краш репортов. Фаерфокс запоиминает не отправленные ранее по какой то либо причине и отправлет при следующем запуске.
 user_pref("browser.tabs.crashReporting.sendReport", false); //browser.tabs.crashReporting.sendReport - отправка отчетов отдельных вкладок, не всего браузера, а отдельных вкладок.
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false); //browser.newtabpage.activity-stream.feeds.telemetry - еще один сборщик данных, в этот раз телеметрия ленты на новой вкладке (рекомендованные вкладки).
@@ -72,3 +73,9 @@ user_pref("breakpad.reportURL", ""); //breakpad.reportURL - url для отпр�
 user_pref("geo.provider.ms-windows-location", false); //geo.provider.ms-windows-location - использование системного сервиса геолокации виндовс, вместо запроса к Google Location Services, браузер спрашивате у ОС гео для сайтов запрашивающих это.
 user_pref("geo.provider.use_corelocation", false); //geo.provider.use_corelocation - аналогично geo.provider.ms-windows-location но для мака.
 user_pref("geo.provider.use_geoclue", false); //geo.provider.use_geoclue - тоже самое, но для GeoClue на линукс.
+
+// permissions.
+user_pref("permissions.default.geo", 2); //permissions.default.geo - политика геолокации для всех сайтов.
+
+// captivedetect.
+user_pref("captivedetect.canonicalURL", ""); //captivedetect.canonicalURL - url для проверки captive portal. Браузер стучиться на сервер мозилы при подключении к любому wifi, тем самым раскрывая факт подключения к новой сети.
