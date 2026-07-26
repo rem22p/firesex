@@ -1,5 +1,4 @@
-const { use } = require("react");
-
+// glean.
 user_pref("about.glean.redesign.enabled", false); //about.glean.redesign.enabled - внутренний переключатель отвечающий за включение нового внешенго вида для функций системы Glean. Херня для корп ИИ - кал.
 
 // privacy.
