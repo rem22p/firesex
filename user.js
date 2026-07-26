@@ -62,6 +62,7 @@ user_pref("datareporting.healthreport.uploadEnabled", false); //datareporting.he
 user_pref("datareporting.usage.uploadEnabled", false); //datareporting.usage.uploadEnabled - отправка статистики использования firefox (сколько вкладок открыто, какие фичи используются и так далее).
 
 // browser.
+user_pref("browser.startup.page", 3); //browser.startup.page - после закрытия браузера вкладки не пропадают.
 user_pref("browser.safebrowsing.downloads.remote.enabled", false); //browser.safebrowsing.downloads.remote.enabled - удаленная проверка скачанных файлов через Google Safe Browsing. Браузер отправляет хэш в гугл на проверку на вирусы.
 user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); //browser.crashReports.unsubmittedCheck.autoSubmit2 - отправка не отправленных ранее краш репортов. Фаерфокс запоиминает не отправленные ранее по какой то либо причине и отправлет при следующем запуске.
 user_pref("browser.tabs.crashReporting.sendReport", false); //browser.tabs.crashReporting.sendReport - отправка отчетов отдельных вкладок, не всего браузера, а отдельных вкладок.
