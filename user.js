@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 // glean.
 user_pref("about.glean.redesign.enabled", false); //about.glean.redesign.enabled - внутренний переключатель отвечающий за включение нового внешенго вида для функций системы Glean. Херня для корп ИИ - кал.
 
@@ -99,3 +101,7 @@ user_pref("captivedetect.canonicalURL", ""); //captivedetect.canonicalURL - url 
 // network.
 user_pref("network.captive-portal-service.enabled", false); //network.captive-portal-service.enabled - сервис определения captive portal, работает в паре с captivedetect.canonicalURL.
 user_pref("network.connectivity-service.enabled", false); //network.connectivity-service.enabled - браузер переодически пингует сервера мозилы что бы понять подключен ты к сети или нет.
+
+// sidebar.
+user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
+user_pref("sidebar.verticalTabs.dragToPinPromo.dismissed", true); //sidebar.verticalTabs.dragToPinPromo.dismissed - убрать подсказку тупорылую с сайдбара.
