@@ -65,7 +65,7 @@ user_pref("browser.newtabpage.activity-stream.telemetry", false); //browser.newt
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); //browser.newtabpage.activity-stream.showSponsoredTopSites - тоже самое говнище но в другой обертке.
 user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false); //browser.newtabpage.activity-stream.showSponsoredCheckboxes - в названии showSponsored - кал.
-user_pref("browser.newtabpage.activity-stream.default.sites", false); //browser.newtabpage.activity-stream.default.sites - дефолтный список сайтов которые браузер показывает в рекомендованых на новой вкладке.
+user_pref("browser.newtabpage.activity-stream.default.sites", ""); //browser.newtabpage.activity-stream.default.sites - дефолтный список сайтов которые браузер показывает в рекомендованых на новой вкладке.
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); //browser.newtabpage.activity-stream.feeds.section.topstories - рекомендованные истории ХАХАХАХАХАА для кого это вообще не понятно.
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false); //browser.newtabpage.activity-stream.feeds.section.highlights - недавно песещаемые сайты, все нужное в закладках, мусор.
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false); //browser.newtabpage.activity-stream.feeds.snippets - месаги от мозилы. Скачай firefox mobile и так далее.
