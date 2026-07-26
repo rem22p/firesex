@@ -1,0 +1,35 @@
+#firefox-view-button {
+    display: none !important;
+}
+
+#fxa-toolbar-menu-button {
+    display: none !important;
+}
+
+#personal-toolbar-empty-description {
+    display: none !important;
+}
+
+#alltabs-button {
+    display: none !important;
+}
+
+#sidebar-button {
+    display: none !important;
+}
+
+#new-tab-button {
+    display: none !important;
+}
+
+#unified-extensions-button {
+    display: none !important;
+}
+
+#sidebar-tools-and-extensions-splitter {
+    display: none !important;
+}
+
+#sidebar-tools-and-extensions-splitter {
+    display: none !important;
+}
