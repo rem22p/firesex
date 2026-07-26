@@ -35,6 +35,9 @@ user_pref("alerts.useSystemBackend.windows.notificationserver.enabled", false); 
 //android.touch_resampling.enabled - отвечает за поведение скрола на телефонах с андроидом и экрана высокой частоты обновления. Не интересно.
 //android.widget_paints_background - регулирует отрисовку виджетов на телефонах с андроидом. Не интересно.
 
+// toolkit.
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
 // toolkit.telemetry.
 user_pref("toolkit.telemetry.unified", false); //toolkit.telemetry.unified - единная система телеметрии firefox, все подсистемы работают через этот рубильник. Железно офф.
 user_pref("toolkit.telemetry.enabled", false); //toolkit.telemetry.enabled - дубль toolkit.telemetry.unified, невиданная наглость. Что бы отключить телеметрию полностью надо и его тоже выключить.
