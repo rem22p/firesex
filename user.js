@@ -41,6 +41,7 @@ user_pref("toolkit.telemetry.enabled", false); //toolkit.telemetry.enabled - д�
 user_pref("toolkit.telemetry.server", "data:,"); //toolkit.telemetry.server - урл сервера куда шлеться телеметрия.
 user_pref("toolkit.telemetry.archive.enabled", false); //toolkit.telemetry.archive.enabled - когда нет интернета, браузер архивирует телеметрию и когда подключение востановиться он их отправит на сервера firefox. off.
 user_pref("toolkit.telemetry.newProfilePing.enabled", false); //toolkit.telemetry.newProfilePing.enabled - при создании нового профиля отправляет слепок системы на серваки мозилы. оффаем.
+user_pref("toolkit.telemetry.updatePing.enabled", false); //toolkit.telemetry.updatePing.enabled - тоже самое но после обновления.
 user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); //toolkit.telemetry.shutdownPingSender.enabled - после закрытия браузера отправляет аналитику сессии. Сколько вкладок было открыто, сколько использовал памяти и так далее.
 user_pref("toolkit.telemetry.bhrPing.enabled", false); //toolkit.telemetry.bhrPing.enabled - при зависании браузера собирает данные о инциденте и отправляет на сервера мозилы. Может засветить пути к файлам.
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false); //toolkit.telemetry.firstShutdownPing.enabled - аналог newProfilePing, но для первого закрытия профиля.
