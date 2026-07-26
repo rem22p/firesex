@@ -105,3 +105,4 @@ user_pref("network.connectivity-service.enabled", false); //network.connectivity
 // sidebar.
 user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
 user_pref("sidebar.verticalTabs.dragToPinPromo.dismissed", true); //sidebar.verticalTabs.dragToPinPromo.dismissed - убрать подсказку тупорылую с сайдбара.
+user_pref("sidebar.main.tools", ""); //sidebar.main.tools - список всяких вкладок внизу сайдбара (там был ии чат бот).
