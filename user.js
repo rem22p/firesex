@@ -61,6 +61,17 @@ user_pref("browser.tabs.crashReporting.sendReport", false); //browser.tabs.crash
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false); //browser.newtabpage.activity-stream.feeds.telemetry - еще один сборщик данных, в этот раз телеметрия ленты на новой вкладке (рекомендованные вкладки).
 user_pref("browser.newtabpage.activity-stream.telemetry", false); //browser.newtabpage.activity-stream.telemetry - аналогично верхнему префу с небольшими дополнениями.
 
+// browser.newtabpage.
+user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); //browser.newtabpage.activity-stream.showSponsoredTopSites - тоже самое говнище но в другой обертке.
+user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false); //browser.newtabpage.activity-stream.showSponsoredCheckboxes - в названии showSponsored - кал.
+user_pref("browser.newtabpage.activity-stream.default.sites", false); //browser.newtabpage.activity-stream.default.sites - дефолтный список сайтов которые браузер показывает в рекомендованых на новой вкладке.
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); //browser.newtabpage.activity-stream.feeds.section.topstories - рекомендованные истории ХАХАХАХАХАА для кого это вообще не понятно.
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false); //browser.newtabpage.activity-stream.feeds.section.highlights - недавно песещаемые сайты, все нужное в закладках, мусор.
+user_pref("browser.newtabpage.activity-stream.feeds.snippets", false); //browser.newtabpage.activity-stream.feeds.snippets - месаги от мозилы. Скачай firefox mobile и так далее.
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false); //browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons - контекстные рекомендации от мозилы по поводу дополнений.
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false); //browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features - тоже самое но рекомендации фич.
+
 // app.
 user_pref("app.shield.optoutstudies.enabled", false); //app.shield.optoutstudies.enabled - мозила тестирует эксперементальные фичи на случайных пользователях. Если не выключить то ты потенуиально подопытный.
 user_pref("app.normandy.enabled", false); //app.normandy.enabled - normandy это система удаленного управления браузером, мозила может менять настройки, запускать опросы и так далее, буквально бекдор. 1000% октлючение.
