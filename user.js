@@ -122,6 +122,7 @@ user_pref("browser.urlbar.groupLabels.enabled", false); //browser.urlbar.groupLa
 user_pref("browser.urlbar.merino.endpointURL", ""); //browser.urlbar.merino.endpointURL - адрес сервера Merino, откуда берутся все suggest-подсказки. Затираю.
 user_pref("browser.urlbar.speculativeConnect.enabled", false); //browser.urlbar.speculativeConnect.enabled - соединение с сервером ещё до нажатия Enter в urlbar.
 user_pref("browser.places.speculativeConnect.enabled", false); //browser.places.speculativeConnect.enabled - соединение при наведении на закладки и историю.
+user_pref("browser.xul.error_pages.expert_bad_cert", true); //browser.xul.error_pages.expert_bad_cert - расширенная информация на страницах ошибок сертификатов. Видно, что именно не так.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -175,6 +176,8 @@ user_pref("network.preconnect", false); //network.preconnect - предвари�
 user_pref("network.early-hints.preconnect.enabled", false); //network.early-hints.preconnect.enabled - preconnect по Early Hints (103) от сайта. Сайт сам решает куда тебе соединяться, нет.
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2); //network.http.referer.XOriginTrimmingPolicy - обрезка Referer при кросс-доменных запросах. 0 - полный URL, 1 - без параметров, 2 - только домен.
 user_pref("network.auth.subresource-http-auth-allow", 1); //network.auth.subresource-http-auth-allow - HTTP-аутентификация для субресурсов. 0 - никогда, 1 - только same-origin, 2 - всегда. 1 защищает от фишинга через картинки.
+user_pref("network.http.http3.enable_0rtt", false); //network.http.http3.enable_0rtt - 0-RTT для HTTP/3. Та же проблема replay-атак.
+user_pref("network.IDN_show_punycode", true); //network.IDN_show_punycode - показывать punycode для интернациональных доменов. Защита от фишинга (кириллическая 'а' вместо латинской).
 
 // sidebar.
 user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
@@ -192,6 +195,8 @@ user_pref("dom.reporting.enabled", false); //dom.reporting.enabled - Reporting A
 user_pref("dom.reporting.crash.enabled", false); //dom.reporting.crash.enabled - отчёты о падениях страницы для сайтов через Reporting API. Нет.
 user_pref("dom.reporting.header.enabled", false); //dom.reporting.header.enabled - заголовок Report-To / Reporting-Endpoints, с которым сайт сам задаёт куда браузеру слать отчёты. Нет.
 user_pref("dom.reporting.featurePolicy.enabled", false); //dom.reporting.featurePolicy.enabled - отчёты о нарушениях feature policy сайту. Тоже Reporting API, тоже выключаем.
+user_pref("dom.security.https_only_mode", true); //dom.security.https_only_mode - HTTPS-Only во всех окнах. HTTP-запросы апгрейдятся, без HTTPS - страница-предупреждение.
+user_pref("dom.security.https_only_mode_send_http_background_request", false); //dom.security.https_only_mode_send_http_background_request - фоновый HTTP-запрос для проверки, нужен ли апгрейд. Лишняя отправка по небезопасному каналу.
 
 // beacon.
 user_pref("beacon.enabled", false); //beacon.enabled - navigator.sendBeacon - отправка данных при закрытии страницы, основной инструмент аналитики и трекеров. Минус - иногда ломается отправка на сайтах, плюс - трекерам хуже.
@@ -227,3 +232,21 @@ user_pref("browser.contentblocking.cfr-milestone.enabled", false); //browser.con
 // startup.
 user_pref("startup.homepage_welcome_url", ""); //startup.homepage_welcome_url - страница приветствия при первом запуске. Затираю.
 user_pref("startup.homepage_welcome_url.additional", ""); //startup.homepage_welcome_url.additional - ещё одна страница приветствия при запуске. Затираю.
+
+// security.
+user_pref("security.ssl.require_safe_negotiation", true); //security.ssl.require_safe_negotiation - требует безопасного пересогласования SSL. Блокирует серверы, уязвимые к MiTM-атаке на пересогласование.
+user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true); //security.ssl.treat_unsafe_negotiation_as_broken - показывает небезопасное пересогласование как сломанное соединение.
+user_pref("security.tls.enable_0rtt_data", false); //security.tls.enable_0rtt_data - TLS 1.3 0-RTT. Данные без forward secrecy, их можно перехватить и повторить. Отключаем.
+user_pref("security.cert_pinning.enforcement_level", 2); //security.cert_pinning.enforcement_level - строгая проверка закрепления сертификатов. 0 - выкл, 1 - разрешает MiTM-корни, 2 - строго.
+user_pref("security.remote_settings.crlite_filters.enabled", true); //security.remote_settings.crlite_filters.enabled - CRLite - локальные фильтры отозванных сертификатов. Проверка отзыва без запросов к CA, то есть без утечки посещаемых сайтов.
+user_pref("security.mixed_content.block_display_content", true); //security.mixed_content.block_display_content - блокирует смешанный контент (HTTP-картинки на HTTPS-странице). Картинки по HTTP подменяются и следят.
+user_pref("security.insecure_connection_text.enabled", true); //security.insecure_connection_text.enabled - пишет 'Не защищено' в адресной строке для HTTP. Явное предупреждение.
+user_pref("security.insecure_connection_text.pbmode.enabled", true); //security.insecure_connection_text.pbmode.enabled - то же самое в приватных окнах.
+user_pref("security.certerrors.mitm.priming.enabled", false); //security.certerrors.mitm.priming.enabled - при ошибке сертификата firefox стучится на сервер мозилы проверить, не MiTM ли это. Лишний стук, да ещё и с твоим адресом.
+user_pref("security.certerrors.mitm.auto_enable_enterprise_roots", false); //security.certerrors.mitm.auto_enable_enterprise_roots - автоматически доверять корпоративным корням при подозрении на MiTM. Нет, доверие даём сами.
+user_pref("security.tls.version.min", 3); //security.tls.version.min - минимальная версия TLS. 3 = TLS 1.2, всё старше режем.
+user_pref("security.ssl3.deprecated.rsa_des_ede3_sha", false); //security.ssl3.deprecated.rsa_des_ede3_sha - 3DES - устаревший шифр, уязвимый к Sweet32. Выключаем.
+user_pref("security.ssl3.rsa_aes_128_sha", false); //security.ssl3.rsa_aes_128_sha - шифр без forward secrecy (чистый RSA обмен ключами). Выключаем.
+user_pref("security.ssl3.rsa_aes_256_sha", false); //security.ssl3.rsa_aes_256_sha - тоже без forward secrecy. Выключаем.
+user_pref("security.ssl3.dhe_rsa_aes_128_sha", false); //security.ssl3.dhe_rsa_aes_128_sha - DHE с SHA-1, слабый шифр. Выключаем.
+user_pref("security.ssl3.dhe_rsa_aes_256_sha", false); //security.ssl3.dhe_rsa_aes_256_sha - то же самое для AES-256. Выключаем.
