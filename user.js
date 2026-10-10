@@ -120,6 +120,8 @@ user_pref("browser.urlbar.amp.featureGate", false); //browser.urlbar.amp.feature
 user_pref("browser.urlbar.fakespot.featureGate", false); //browser.urlbar.fakespot.featureGate - Fakespot (проверка отзывов) в urlbar. Мозила купила и пихает.
 user_pref("browser.urlbar.groupLabels.enabled", false); //browser.urlbar.groupLabels.enabled - групповые метки в urlbar. Часть Firefox Suggest.
 user_pref("browser.urlbar.merino.endpointURL", ""); //browser.urlbar.merino.endpointURL - адрес сервера Merino, откуда берутся все suggest-подсказки. Затираю.
+user_pref("browser.urlbar.speculativeConnect.enabled", false); //browser.urlbar.speculativeConnect.enabled - соединение с сервером ещё до нажатия Enter в urlbar.
+user_pref("browser.places.speculativeConnect.enabled", false); //browser.places.speculativeConnect.enabled - соединение при наведении на закладки и историю.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -150,6 +152,7 @@ user_pref("breakpad.reportURL", ""); //breakpad.reportURL - url для отпр�
 user_pref("geo.provider.ms-windows-location", false); //geo.provider.ms-windows-location - использование системного сервиса геолокации виндовс, вместо запроса к Google Location Services, браузер спрашивате у ОС гео для сайтов запрашивающих это.
 user_pref("geo.provider.use_corelocation", false); //geo.provider.use_corelocation - аналогично geo.provider.ms-windows-location но для мака.
 user_pref("geo.provider.use_geoclue", false); //geo.provider.use_geoclue - тоже самое, но для GeoClue на линукс.
+user_pref("geo.enabled", false); //geo.enabled - геолокация целиком. Жёстче, чем permissions.default.geo = 2, API просто нет.
 
 // permissions.
 user_pref("permissions.default.geo", 2); //permissions.default.geo - политика геолокации для всех сайтов.
@@ -162,6 +165,16 @@ user_pref("captivedetect.canonicalURL", ""); //captivedetect.canonicalURL - url 
 user_pref("network.captive-portal-service.enabled", false); //network.captive-portal-service.enabled - сервис определения captive portal, работает в паре с captivedetect.canonicalURL.
 user_pref("network.connectivity-service.enabled", false); //network.connectivity-service.enabled - браузер переодически пингует сервера мозилы что бы понять подключен ты к сети или нет.
 user_pref("network.trr.confirmation_telemetry_enabled", false); //network.trr.confirmation_telemetry_enabled - телеметрия подтверждения DoH-соединения. DoH не используем, пинг не нужен.
+user_pref("network.prefetch-next", false); //network.prefetch-next - предзагрузка страниц по подсказке сайта (link prefetch). Грузит то, что ты не открывал. Нет.
+user_pref("network.dns.disablePrefetch", true); //network.dns.disablePrefetch - предварительный DNS-резолвинг ссылок на странице. Твой DNS-провайдер видит все домены со всех страниц. true - отключено.
+user_pref("network.dns.disablePrefetchFromHTTPS", true); //network.dns.disablePrefetchFromHTTPS - то же самое для HTTPS-страниц. Дубль.
+user_pref("network.http.speculative-parallel-limit", 0); //network.http.speculative-parallel-limit - спекулятивные TCP-соединения при наведении мыши на ссылку. 0 - не соединяться заранее.
+user_pref("network.predictor.enabled", false); //network.predictor.enabled - предиктор: учится по твоей истории и заранее открывает соединения. Собирает профиль привычек на диске, выключаем.
+user_pref("network.predictor.enable-prefetch", false); //network.predictor.enable-prefetch - предиктор заранее скачивает ресурсы. Нет.
+user_pref("network.preconnect", false); //network.preconnect - предварительные соединения к серверам. Сайты видят твой IP раньше, чем ты на них зашёл.
+user_pref("network.early-hints.preconnect.enabled", false); //network.early-hints.preconnect.enabled - preconnect по Early Hints (103) от сайта. Сайт сам решает куда тебе соединяться, нет.
+user_pref("network.http.referer.XOriginTrimmingPolicy", 2); //network.http.referer.XOriginTrimmingPolicy - обрезка Referer при кросс-доменных запросах. 0 - полный URL, 1 - без параметров, 2 - только домен.
+user_pref("network.auth.subresource-http-auth-allow", 1); //network.auth.subresource-http-auth-allow - HTTP-аутентификация для субресурсов. 0 - никогда, 1 - только same-origin, 2 - всегда. 1 защищает от фишинга через картинки.
 
 // sidebar.
 user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
