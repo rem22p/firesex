@@ -77,6 +77,18 @@ user_pref("browser.crashReports.unsubmittedCheck.enabled", false); //browser.cra
 user_pref("browser.send_pings", false); //browser.send_pings - hyperlink auditing, атрибут ping у ссылок, по которому сайт узнаёт о клике. По умолчанию уже false, но явно прописываю.
 user_pref("browser.send_pings.require_same_host", true); //browser.send_pings.require_same_host - если ping всё же включат, то только на тот же хост. Страховка.
 user_pref("browser.dataFeatureRecommendations.enabled", false); //browser.dataFeatureRecommendations.enabled - рекомендации включить сбор данных ради фич. Прямая просьба включить телеметрию, отказываем.
+user_pref("browser.uitour.enabled", false); //browser.uitour.enabled - бэкенд для туров по интерфейсу. Теоретически удалённая страница mozilla.org может им управлять. Не рискуем.
+user_pref("browser.uitour.url", ""); //browser.uitour.url - адрес страницы туров. Затираю.
+user_pref("browser.discovery.containers.enabled", false); //browser.discovery.containers.enabled - рекомендации контейнеров в рамках discovery. Тот же мусор, что и browser.discovery.enabled.
+user_pref("browser.vpn_promo.enabled", false); //browser.vpn_promo.enabled - реклама Mozilla VPN в браузере. Платная реклама своего продукта, кал.
+user_pref("browser.promo.focus.enabled", false); //browser.promo.focus.enabled - реклама Firefox Focus (мобилка). Не интересно.
+user_pref("browser.promo.pin.enabled", false); //browser.promo.pin.enabled - просьба закрепить firefox на панели задач. Сами разберёмся.
+user_pref("browser.promo.cookiebanners.enabled", false); //browser.promo.cookiebanners.enabled - реклама автоматической обработки куки-баннеров. Нет.
+user_pref("browser.privacySegmentation.preferences.show", false); //browser.privacySegmentation.preferences.show - секция сегментации приватности в настройках. Лишнее.
+user_pref("browser.shell.checkDefaultBrowser", false); //browser.shell.checkDefaultBrowser - проверка, является ли firefox браузером по умолчанию. Не напоминай.
+user_pref("browser.preferences.moreFromMozilla", false); //browser.preferences.moreFromMozilla - секция 'Больше от Mozilla' в настройках. Реклама других продуктов.
+user_pref("browser.aboutwelcome.enabled", false); //browser.aboutwelcome.enabled - страница приветствия после обновлений. Неинтересно.
+user_pref("browser.messaging-system.whatsNewPanel.enabled", false); //browser.messaging-system.whatsNewPanel.enabled - панель 'что нового' после обновлений. Мозила не должна отвлекать.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -104,6 +116,7 @@ user_pref("geo.provider.use_geoclue", false); //geo.provider.use_geoclue - то�
 
 // permissions.
 user_pref("permissions.default.geo", 2); //permissions.default.geo - политика геолокации для всех сайтов.
+user_pref("permissions.manager.defaultsUrl", ""); //permissions.manager.defaultsUrl - адрес списка предустановленных разрешений от мозилы. Не нужно, чтобы она раздавала разрешения за меня.
 
 // captivedetect.
 user_pref("captivedetect.canonicalURL", ""); //captivedetect.canonicalURL - url для проверки captive portal. Браузер стучиться на сервер мозилы при подключении к любому wifi, тем самым раскрывая факт подключения к новой сети.
@@ -144,3 +157,23 @@ user_pref("default-browser-agent.enabled", false); //default-browser-agent.enabl
 
 // identity.
 user_pref("identity.fxaccounts.telemetry.clientAssociationPing.enabled", false); //identity.fxaccounts.telemetry.clientAssociationPing.enabled - пинг при привязке устройства к аккаунту firefox. Аккаунтом не пользуемся, но пинг режем.
+
+// extensions.
+user_pref("extensions.pocket.enabled", false); //extensions.pocket.enabled - Pocket - сохранялка статей от мозилы. Шлёт данные на сервера, пользы ноль.
+user_pref("extensions.getAddons.showPane", false); //extensions.getAddons.showPane - панель рекомендаций дополнений в about:addons. Тянет контент с серверов мозилы.
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false); //extensions.htmlaboutaddons.recommendations.enabled - персональные рекомендации дополнений в about:addons. Ещё один стук на сервер.
+user_pref("extensions.getAddons.discovery.api_url", ""); //extensions.getAddons.discovery.api_url - api-адрес для вкладки обнаружения дополнений. Затираю.
+user_pref("extensions.abuseReport.enabled", false); //extensions.abuseReport.enabled - встроенная жалоба на дополнения в мозилу. Отправляет данные о дополнении и профиле, если нажать. Не нужна.
+user_pref("extensions.systemAddon.update.enabled", false); //extensions.systemAddon.update.enabled - обновление системных дополнений мозилы без твоего участия. Мозила не должна ставить в мой браузер что-то втихаря.
+
+// browser.contentblocking.
+user_pref("browser.contentblocking.report.lockwise.enabled", false); //browser.contentblocking.report.lockwise.enabled - реклама Lockwise в отчёте о защите. Нам не надо.
+user_pref("browser.contentblocking.report.monitor.enabled", false); //browser.contentblocking.report.monitor.enabled - реклама Mozilla Monitor в отчёте о защите. Нет.
+user_pref("browser.contentblocking.report.proxy.enabled", false); //browser.contentblocking.report.proxy.enabled - реклама прокси-расширения в отчёте о защите. Нет.
+user_pref("browser.contentblocking.report.show_mobile_app", false); //browser.contentblocking.report.show_mobile_app - реклама мобильного приложения в отчёте о защите. Нет.
+user_pref("browser.contentblocking.report.hide_vpn_banner", true); //browser.contentblocking.report.hide_vpn_banner - прячет баннер VPN в отчёте о защите.
+user_pref("browser.contentblocking.cfr-milestone.enabled", false); //browser.contentblocking.cfr-milestone.enabled - поздравления вида 'мы заблокировали 1000 трекеров'. Нахрен.
+
+// startup.
+user_pref("startup.homepage_welcome_url", ""); //startup.homepage_welcome_url - страница приветствия при первом запуске. Затираю.
+user_pref("startup.homepage_welcome_url.additional", ""); //startup.homepage_welcome_url.additional - ещё одна страница приветствия при запуске. Затираю.
