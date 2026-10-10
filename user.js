@@ -19,6 +19,7 @@ user_pref("privacy.query_stripping.enabled.pbmode", true); //privacy.query_strip
 user_pref("privacy.globalprivacycontrol.enabled", true); //privacy.globalprivacycontrol.enabled - сигнал Global Privacy Control, 'не продавайте мои данные'. Вреда нет.
 user_pref("privacy.globalprivacycontrol.pbmode.enabled", true); //privacy.globalprivacycontrol.pbmode.enabled - то же самое в приватных окнах.
 user_pref("privacy.bounceTrackingProtection.mode", 1); //privacy.bounceTrackingProtection.mode - защита от bounce-трекинга (редирект через трекер, чтобы поставить куку). 1 - включена.
+user_pref("privacy.antitracking.isolateContentScriptResources", true); //privacy.antitracking.isolateContentScriptResources - изоляция ресурсов скриптов дополнений. Расширения не должны шарить ресурсы между сайтами.
 
 // accessibility.
 user_pref("accessibility.AOM.enabled", false); //accessibility.AOM.enabled - открывает сайтам прямой доступ к управлению экранным диктором через JavaScript, что позволяет разработчикам адаптировать сложные веб-приложения для незрячих, но одновременно дает трекерам инструмент для скрытой слежки за пользователем. +1 флаг в цифром досье, говно.
@@ -147,6 +148,12 @@ user_pref("browser.shell.shortcutFavicons", false); //browser.shell.shortcutFavi
 user_pref("browser.formfill.enable", false); //browser.formfill.enable - автозаполнение форм и история поиска. Третьи лица могут считать данные через скрытые поля.
 user_pref("browser.search.serpEventTelemetryCategorization.enabled", false); //browser.search.serpEventTelemetryCategorization.enabled - категоризация поисковой выдачи для телеметрии: мозила классифицирует, что ты искал. Нет.
 user_pref("browser.tabs.crashReporting.includeURL", false); //browser.tabs.crashReporting.includeURL - добавлять URL упавшей вкладки в краш-репорт. Репорты и так не шлём, но URL точно не нужен.
+user_pref("browser.download.start_downloads_in_tmp_dir", true); //browser.download.start_downloads_in_tmp_dir - начинать загрузки во временную папку. Меньше следов в основной папке загрузок.
+user_pref("browser.helperApps.deleteTempFileOnExit", true); //browser.helperApps.deleteTempFileOnExit - удалять временные файлы внешних приложений при выходе. Чистота.
+user_pref("browser.download.manager.addToRecentDocs", false); //browser.download.manager.addToRecentDocs - добавление загрузок в недавние документы системы. Лишняя информация о том, что ты качал.
+user_pref("browser.download.always_ask_before_handling_new_types", true); //browser.download.always_ask_before_handling_new_types - спрашивать, что делать с новыми типами файлов. Безопаснее, чем открывать молча.
+user_pref("browser.download.useDownloadDir", false); //browser.download.useDownloadDir - всегда спрашивать, куда сохранять. Контроль над тем, что и куда падает.
+user_pref("browser.contentanalysis.enabled", false); //browser.contentanalysis.enabled - DLP-агенты (Data Loss Prevention) для корпоративных машин. Домашнему пользователю не нужно, лишний канал.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -237,6 +244,7 @@ user_pref("dom.push.enabled", false); //dom.push.enabled - Push API, сайты 
 user_pref("dom.disable_window_move_resize", true); //dom.disable_window_move_resize - запрещает сайтам двигать и ресайзить окна. Меньше контроля у скриптов.
 user_pref("dom.security.unexpected_system_load_telemetry_enabled", false); //dom.security.unexpected_system_load_telemetry_enabled - телеметрия о необычной нагрузке системы. Нет.
 user_pref("dom.webcomponents.shadowdom.report_usage", false); //dom.webcomponents.shadowdom.report_usage - счётчики использования shadow DOM для телеметрии. Нет.
+user_pref("dom.security.https_only_mode_error_page_user_suggestions", true); //dom.security.https_only_mode_error_page_user_suggestions - подсказки на странице ошибки HTTPS-Only. Полезно: объясняет, что делать, вместо тупика.
 
 // beacon.
 user_pref("beacon.enabled", false); //beacon.enabled - navigator.sendBeacon - отправка данных при закрытии страницы, основной инструмент аналитики и трекеров. Минус - иногда ломается отправка на сайтах, плюс - трекерам хуже.
@@ -262,6 +270,7 @@ user_pref("extensions.abuseReport.enabled", false); //extensions.abuseReport.ena
 user_pref("extensions.systemAddon.update.enabled", false); //extensions.systemAddon.update.enabled - обновление системных дополнений мозилы без твоего участия. Мозила не должна ставить в мой браузер что-то втихаря.
 user_pref("extensions.formautofill.addresses.enabled", false); //extensions.formautofill.addresses.enabled - автозаполнение адресов. Адрес хранится в профиле, читается любой формой.
 user_pref("extensions.formautofill.creditCards.enabled", false); //extensions.formautofill.creditCards.enabled - автозаполнение банковских карт. Карты в браузере - плохая идея.
+user_pref("extensions.getAddons.cache.enabled", false); //extensions.getAddons.cache.enabled - кеширование данных о дополнениях. При обновлении кеша стучит на сервера мозилы.
 
 // browser.contentblocking.
 user_pref("browser.contentblocking.report.lockwise.enabled", false); //browser.contentblocking.report.lockwise.enabled - реклама Lockwise в отчёте о защите. Нам не надо.
