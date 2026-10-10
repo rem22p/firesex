@@ -365,5 +365,5 @@ user_pref("pdfjs.enableScripting", false); //pdfjs.enableScripting - выпол�
 
 // media.
 user_pref("media.memory_cache_max_size", 65536); //media.memory_cache_max_size - размер медиакеша в памяти, КБ. 65536 = 64 МБ, хватает для стримов.
-user_pref("media.autoplay.default", 5); //media.autoplay.default - автовоспроизведение. 0 - разрешить, 1 - блокировать звук, 5 - блокировать звук и видео. Экономит ресурсы и нервы, нужное видео запускается кликом.
+user_pref("media.autoplay.default", 1); //media.autoplay.default - автовоспроизведение. 0 - разрешить всё, 1 - блокировать только звук (по умолчанию), 5 - блокировать звук и видео. Блокировку по клику убрал: стоит дефолт, видео без звука запускается само.
 user_pref("media.hardware-video-decoding.enabled", true); //media.hardware-video-decoding.enabled - аппаратное декодирование видео на видеокарте (RX 6600). Меньше нагрузки на процессор.
