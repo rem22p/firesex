@@ -61,12 +61,20 @@
 :root {
     --fx-bg: rgba(0, 0, 0, 0.55);
     --fx-field: rgba(255, 255, 255, 0.08);
-    --lwt-accent-color: transparent !important;
-    --toolbar-bgcolor: transparent !important;
+    --toolbox-background-color: transparent !important;
+    --toolbox-background-color-inactive: transparent !important;
+    --toolbox-background-image: none !important;
+    --toolbox-background-gradient: none !important;
+    --toolbar-background-color: transparent !important;
+    --toolbar-background: transparent !important;
+    --tabbar-background: transparent !important;
     --tabpanel-background-color: transparent !important;
     --sidebar-background-color: transparent !important;
+    --lwt-accent-color: transparent !important;
     --toolbar-field-background-color: var(--fx-field) !important;
+    --urlbar-box-background-color: var(--fx-field) !important;
     --toolbarbutton-hover-background: rgba(255, 255, 255, 0.12) !important;
+    --toolbarbutton-background-color-hover: rgba(255, 255, 255, 0.12) !important;
     --panel-background: #0b0b0b !important;
 }
 
