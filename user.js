@@ -163,6 +163,20 @@ user_pref("browser.download.useDownloadDir", false); //browser.download.useDownl
 user_pref("browser.contentanalysis.enabled", false); //browser.contentanalysis.enabled - DLP-агенты (Data Loss Prevention) для корпоративных машин. Домашнему пользователю не нужно, лишний канал.
 user_pref("browser.cache.disk.capacity", 524288); //browser.cache.disk.capacity - размер дискового кеша в КБ. 524288 = 512 МБ, хватает на 10-15 вкладок и не раздувает диск.
 user_pref("browser.cache.disk.smart_size.enabled", false); //browser.cache.disk.smart_size.enabled - авто-размер кеша по свободному месту на диске. Выключаем, чтобы работал фиксированный лимит выше.
+user_pref("browser.sessionstore.restore_on_demand", true); //browser.sessionstore.restore_on_demand - вкладки восстанавливаются только когда на них переключаешься. С 10-15 вкладками запуск мгновенный.
+user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true); //browser.sessionstore.restore_pinned_tabs_on_demand - то же самое для закреплённых вкладок.
+user_pref("browser.sessionstore.interval", 60000); //browser.sessionstore.interval - как часто сохранять сессию, мс. 60000 = раз в минуту (по умолчанию 15 секунд), меньше записей на диск.
+user_pref("browser.sessionstore.max_tabs_undo", 5); //browser.sessionstore.max_tabs_undo - сколько закрытых вкладок помнить для 'вернуть закрытую'. Меньше памяти.
+user_pref("browser.sessionstore.max_windows_undo", 1); //browser.sessionstore.max_windows_undo - сколько закрытых окон помнить. Достаточно одного.
+user_pref("browser.tabs.unloadOnLowMemory", true); //browser.tabs.unloadOnLowMemory - выгружать фоновые вкладки, когда не хватает памяти. На 16 ГБ спасает, если открыть лишнее.
+user_pref("browser.startup.preXulSkeletonUI", true); //browser.startup.preXulSkeletonUI - рисует окно сразу при запуске, пока грузится остальное. Ощущается быстрее.
+user_pref("browser.newtab.preload", false); //browser.newtab.preload - предзагрузка новой вкладки в фоне. Новая вкладка у нас пустая, держать её в памяти незачем.
+user_pref("browser.cache.memory.enable", true); //browser.cache.memory.enable - кеш в оперативной памяти. Включён, чтобы горячие ресурсы отдавались мгновенно.
+user_pref("browser.cache.memory.capacity", 262144); //browser.cache.memory.capacity - размер кеша в памяти, КБ. 262144 = 256 МБ вместо авторасчёта.
+user_pref("browser.cache.jsbc_compression_level", 3); //browser.cache.jsbc_compression_level - сжатие кеша байткода JavaScript. 3 - быстрее запуск тяжёлых сайтов.
+user_pref("browser.sessionhistory.max_total_viewers", 4); //browser.sessionhistory.max_total_viewers - сколько страниц держать в памяти для мгновенной кнопки 'назад' (bfcache). 4 - баланс скорости и памяти.
+user_pref("browser.tabs.hoverPreview.enabled", false); //browser.tabs.hoverPreview.enabled - превью вкладок при наведении. Не рендерим миниатюры.
+user_pref("browser.tabs.hoverPreview.showThumbnails", false); //browser.tabs.hoverPreview.showThumbnails - миниатюры в превью вкладок. Выключаем.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -224,6 +238,8 @@ user_pref("network.http.referer.XOriginTrimmingPolicy", 2); //network.http.refer
 user_pref("network.auth.subresource-http-auth-allow", 1); //network.auth.subresource-http-auth-allow - HTTP-аутентификация для субресурсов. 0 - никогда, 1 - только same-origin, 2 - всегда. 1 защищает от фишинга через картинки.
 user_pref("network.http.http3.enable_0rtt", false); //network.http.http3.enable_0rtt - 0-RTT для HTTP/3. Та же проблема replay-атак.
 user_pref("network.IDN_show_punycode", true); //network.IDN_show_punycode - показывать punycode для интернациональных доменов. Защита от фишинга (кириллическая 'а' вместо латинской).
+user_pref("network.dnsCacheEntries", 1000); //network.dnsCacheEntries - сколько DNS-записей хранить. Больше записей - меньше повторных запросов.
+user_pref("network.dnsCacheExpiration", 3600); //network.dnsCacheExpiration - сколько секунд живёт DNS-запись. Час, вместо минуты по умолчанию.
 
 // sidebar.
 user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
@@ -269,6 +285,7 @@ user_pref("default-browser-agent.enabled", false); //default-browser-agent.enabl
 
 // identity.
 user_pref("identity.fxaccounts.telemetry.clientAssociationPing.enabled", false); //identity.fxaccounts.telemetry.clientAssociationPing.enabled - пинг при привязке устройства к аккаунту firefox. Аккаунтом не пользуемся, но пинг режем.
+user_pref("identity.fxaccounts.enabled", false); //identity.fxaccounts.enabled - аккаунты Firefox и Sync целиком. Меньше кода и сервисов в фоне.
 
 // extensions.
 user_pref("extensions.pocket.enabled", false); //extensions.pocket.enabled - Pocket - сохранялка статей от мозилы. Шлёт данные на сервера, пользы ноль.
@@ -332,3 +349,8 @@ user_pref("signon.firefoxRelay.feature", "disabled"); //signon.firefoxRelay.feat
 
 // pdfjs.
 user_pref("pdfjs.enableScripting", false); //pdfjs.enableScripting - выполнение JavaScript в PDF. PDF не должен исполнять код.
+
+// media.
+user_pref("media.memory_cache_max_size", 65536); //media.memory_cache_max_size - размер медиакеша в памяти, КБ. 65536 = 64 МБ, хватает для стримов.
+user_pref("media.autoplay.default", 5); //media.autoplay.default - автовоспроизведение. 0 - разрешить, 1 - блокировать звук, 5 - блокировать звук и видео. Экономит ресурсы и нервы, нужное видео запускается кликом.
+user_pref("media.hardware-video-decoding.enabled", true); //media.hardware-video-decoding.enabled - аппаратное декодирование видео на видеокарте (RX 6600). Меньше нагрузки на процессор.
