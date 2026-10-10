@@ -59,7 +59,7 @@
 
 /* black / transparent chrome. --fx-bg alpha: 1 = solid black, 0.55 = see-through (needs a compositor) */
 :root {
-    --fx-bg: rgba(0, 0, 0, 0.55);
+    --fx-bg: rgba(0, 0, 0, 0.9);
     --fx-field: rgba(255, 255, 255, 0.08);
     --toolbox-background-color: transparent !important;
     --toolbox-background-color-inactive: transparent !important;
@@ -111,7 +111,7 @@
 #sidebar-container[sidebar-launcher-expanded],
 #sidebar-container[sidebar-ongoing-animations] {
     background-image: none !important;
-    background-color: rgba(0, 0, 0, 0.92) !important;
+    background-color: var(--fx-bg) !important;
 }
 
 /* hide text labels in the urlbar and toolbar buttons (the "Not secure" label stays on purpose) */
@@ -140,7 +140,7 @@
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.15s ease, opacity 0.15s ease;
-    background-color: rgba(0, 0, 0, 0.92) !important;
+    background-color: var(--fx-bg) !important;
 }
 
 #navigator-toolbox:hover #nav-bar,
