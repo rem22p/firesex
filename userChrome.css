@@ -87,6 +87,7 @@
 #sidebar-main,
 #vertical-tabs,
 #tabbrowser-tabs,
+#tabbrowser-tabpanels,
 #tabbrowser-arrowscrollbox {
     background: transparent !important;
     background-color: transparent !important;
