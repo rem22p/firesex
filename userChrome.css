@@ -149,3 +149,10 @@
     transform: translateY(0);
     opacity: 1;
 }
+
+/* bookmarks bar is visible (new tab): keep the nav bar in the normal flow so they don't overlap */
+#navigator-toolbox:has(#PersonalToolbar:not([collapsed="true"])) #nav-bar {
+    position: static !important;
+    transform: none;
+    opacity: 1;
+}
