@@ -158,4 +158,5 @@
     position: static !important;
     transform: none;
     opacity: 1;
+    background-color: transparent !important;
 }
