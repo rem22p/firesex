@@ -37,6 +37,10 @@ user_pref("alerts.useSystemBackend.windows.notificationserver.enabled", false); 
 
 // toolkit.
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); //toolkit.legacyUserProfileCustomizations.stylesheets - преф для того что бы браузер читал userChrome.css файл.
+user_pref("toolkit.content-background-hang-monitor.disabled", true); //toolkit.content-background-hang-monitor.disabled - монитор зависаний вкладок, отчёты о которых летят в телеметрию. true значит монитор выключен.
+user_pref("toolkit.contentRelevancy.enabled", false); //toolkit.contentRelevancy.enabled - content relevancy - фоновое профилирование интересов по истории для персональных рекомендаций. Слежка под видом пользы, мимо.
+user_pref("toolkit.contentRelevancy.ingestEnabled", false); //toolkit.contentRelevancy.ingestEnabled - загрузка данных для content relevancy. Пока выключено основное, это тоже не нужно.
+user_pref("toolkit.shopping.ohttpRelayURL", ""); //toolkit.shopping.ohttpRelayURL - адрес реле для шопинг-фич (проверка отзывов). Затираю, пусть не знает куда слать.
 
 // toolkit.telemetry.
 user_pref("toolkit.telemetry.unified", false); //toolkit.telemetry.unified - единная система телеметрии firefox, все подсистемы работают через этот рубильник. Железно офф.
@@ -49,10 +53,13 @@ user_pref("toolkit.telemetry.shutdownPingSender.enabled", false); //toolkit.tele
 user_pref("toolkit.telemetry.bhrPing.enabled", false); //toolkit.telemetry.bhrPing.enabled - при зависании браузера собирает данные о инциденте и отправляет на сервера мозилы. Может засветить пути к файлам.
 user_pref("toolkit.telemetry.firstShutdownPing.enabled", false); //toolkit.telemetry.firstShutdownPing.enabled - аналог newProfilePing, но для первого закрытия профиля.
 user_pref("toolkit.telemetry.coverage.opt-out", true); //toolkit.telemetry.coverage.opt-out - сбор данных о том какими частями кода ты пользуешься а какими нет. Сбор данных анонимный но все же (true - отказ от сбора данных).
+user_pref("toolkit.telemetry.shutdownPingSender.backgroundtask.enabled", false); //toolkit.telemetry.shutdownPingSender.backgroundtask.enabled - отдельная фоновая задача, которая досылает телеметрию после закрытия браузера. Даже когда firefox закрыт, он хочет настучать. Нет.
+user_pref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false); //toolkit.telemetry.shutdownPingSender.enabledFirstSession - то же самое, но для самой первой сессии профиля. Дубль, вырубаем.
 
 // toolkit.coverage.
 user_pref("toolkit.coverage.opt-out", true); //toolkit.coverage.opt-out - аналог toolkit.telemetry.coverage.opt-out, но для общего сбора.
 user_pref("toolkit.coverage.endpoint.base", ""); //toolkit.coverage.endpoint.base - урл для coverage-данных. Затираю.
+user_pref("toolkit.coverage.enabled", false); //toolkit.coverage.enabled - сбор покрытия кода, какие части firefox ты используешь. Рядом с opt-out, но пусть будет выключен и сам.
 
 // datareporting.
 user_pref("datareporting.policy.dataSubmissionEnabled", false); //datareporting.policy.dataSubmissionEnabled - отвечает за политику отправкки данных. Пока этот параметр выключен, mozilla юридически не может собирать и отправлять куда либо телеметрию.
@@ -66,6 +73,10 @@ user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); //browser
 user_pref("browser.tabs.crashReporting.sendReport", false); //browser.tabs.crashReporting.sendReport - отправка отчетов отдельных вкладок, не всего браузера, а отдельных вкладок.
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false); //browser.newtabpage.activity-stream.feeds.telemetry - еще один сборщик данных, в этот раз телеметрия ленты на новой вкладке (рекомендованные вкладки).
 user_pref("browser.newtabpage.activity-stream.telemetry", false); //browser.newtabpage.activity-stream.telemetry - аналогично верхнему префу с небольшими дополнениями.
+user_pref("browser.crashReports.unsubmittedCheck.enabled", false); //browser.crashReports.unsubmittedCheck.enabled - проверка при запуске: нет ли неотправленных краш-репортов, и предложение их отправить. Не нужно ни проверять, ни предлагать.
+user_pref("browser.send_pings", false); //browser.send_pings - hyperlink auditing, атрибут ping у ссылок, по которому сайт узнаёт о клике. По умолчанию уже false, но явно прописываю.
+user_pref("browser.send_pings.require_same_host", true); //browser.send_pings.require_same_host - если ping всё же включат, то только на тот же хост. Страховка.
+user_pref("browser.dataFeatureRecommendations.enabled", false); //browser.dataFeatureRecommendations.enabled - рекомендации включить сбор данных ради фич. Прямая просьба включить телеметрию, отказываем.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -100,6 +111,7 @@ user_pref("captivedetect.canonicalURL", ""); //captivedetect.canonicalURL - url 
 // network.
 user_pref("network.captive-portal-service.enabled", false); //network.captive-portal-service.enabled - сервис определения captive portal, работает в паре с captivedetect.canonicalURL.
 user_pref("network.connectivity-service.enabled", false); //network.connectivity-service.enabled - браузер переодически пингует сервера мозилы что бы понять подключен ты к сети или нет.
+user_pref("network.trr.confirmation_telemetry_enabled", false); //network.trr.confirmation_telemetry_enabled - телеметрия подтверждения DoH-соединения. DoH не используем, пинг не нужен.
 
 // sidebar.
 user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
@@ -108,3 +120,27 @@ user_pref("sidebar.main.tools", ""); //sidebar.main.tools - список вся�
 
 // ui.
 user_pref("ui.systemUsesDarkTheme", 1); //ui.systemUsesDarkTheme - принудительно выставляем темную тему (выдаем за системную).
+
+// telemetry.
+user_pref("telemetry.fog.init_on_shutdown", false); //telemetry.fog.init_on_shutdown - FOG (Firefox on Glean) - новая система телеметрии на замену старой. Инициализация при выходе нужна только чтобы отправить данные. Не надо.
+
+// dom.
+user_pref("dom.reporting.enabled", false); //dom.reporting.enabled - Reporting API - сайты получают от браузера отчёты о нарушениях, устаревших API и падениях. Бесплатный канал данных для сайтов, выключаем.
+user_pref("dom.reporting.crash.enabled", false); //dom.reporting.crash.enabled - отчёты о падениях страницы для сайтов через Reporting API. Нет.
+user_pref("dom.reporting.header.enabled", false); //dom.reporting.header.enabled - заголовок Report-To / Reporting-Endpoints, с которым сайт сам задаёт куда браузеру слать отчёты. Нет.
+user_pref("dom.reporting.featurePolicy.enabled", false); //dom.reporting.featurePolicy.enabled - отчёты о нарушениях feature policy сайту. Тоже Reporting API, тоже выключаем.
+
+// beacon.
+user_pref("beacon.enabled", false); //beacon.enabled - navigator.sendBeacon - отправка данных при закрытии страницы, основной инструмент аналитики и трекеров. Минус - иногда ломается отправка на сайтах, плюс - трекерам хуже.
+
+// nimbus.
+user_pref("nimbus.telemetry.targetingContextEnabled", false); //nimbus.telemetry.targetingContextEnabled - Nimbus (система экспериментов) отправляет в телеметрию контекст таргетинга: кто ты и что у тебя в профиле. Нет.
+
+// messaging-system.
+user_pref("messaging-system.askForFeedback", false); //messaging-system.askForFeedback - система сообщений мозилы просит оставить отзыв. Не лезь.
+
+// default-browser-agent.
+user_pref("default-browser-agent.enabled", false); //default-browser-agent.enabled - фоновый агент на винде, который сообщает мозиле, дефолтный ли ты браузер. На линуксе не работает, но для винды пусть будет.
+
+// identity.
+user_pref("identity.fxaccounts.telemetry.clientAssociationPing.enabled", false); //identity.fxaccounts.telemetry.clientAssociationPing.enabled - пинг при привязке устройства к аккаунту firefox. Аккаунтом не пользуемся, но пинг режем.
