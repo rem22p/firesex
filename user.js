@@ -191,6 +191,9 @@ user_pref("browser.urlbar.maxRichResults", 5); //browser.urlbar.maxRichResults -
 user_pref("browser.tabs.tabmanager.enabled", false); //browser.tabs.tabmanager.enabled - кнопка 'список всех вкладок'. С вертикальными вкладками лишняя.
 user_pref("browser.tabs.allow_transparent_browser", true); //browser.tabs.allow_transparent_browser - разрешает области страницы быть прозрачной. Без него Firefox красит фон вкладки непрозрачным цветом (тот самый серо-синий), и userContent.css с прозрачным фоном не помогает.
 user_pref("browser.startup.homepage", "about:blank"); //browser.startup.homepage - домашняя страница и страница нового окна. about:blank - пустая, без Firefox Home с логотипом и поиском посередине. Вкладки по Ctrl+T и так пустые из-за browser.newtabpage.enabled.
+user_pref("browser.download.alwaysOpenPanel", false); //browser.download.alwaysOpenPanel - панель загрузок не выскакивает сама при каждой загрузке. Прогресс виден в кнопке.
+user_pref("browser.tabs.closeWindowWithLastTab", false); //browser.tabs.closeWindowWithLastTab - закрытие последней вкладки не закрывает окно. Случайно не вылетишь из браузера.
+user_pref("browser.urlbar.clickSelectsAll", true); //browser.urlbar.clickSelectsAll - клик в адресную строку выделяет весь адрес. Можно сразу печатать новый.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -369,3 +372,18 @@ user_pref("pdfjs.enableScripting", false); //pdfjs.enableScripting - выпол�
 user_pref("media.memory_cache_max_size", 65536); //media.memory_cache_max_size - размер медиакеша в памяти, КБ. 65536 = 64 МБ, хватает для стримов.
 user_pref("media.autoplay.default", 1); //media.autoplay.default - автовоспроизведение. 0 - разрешить всё, 1 - блокировать только звук (по умолчанию), 5 - блокировать звук и видео. Блокировку по клику убрал: стоит дефолт, видео без звука запускается само.
 user_pref("media.hardware-video-decoding.enabled", true); //media.hardware-video-decoding.enabled - аппаратное декодирование видео на видеокарте (RX 6600). Меньше нагрузки на процессор.
+
+// findbar.
+user_pref("findbar.highlightAll", true); //findbar.highlightAll - подсветка всех совпадений при поиске по странице (Ctrl+F).
+
+// layout.
+user_pref("layout.spellcheckDefault", 0); //layout.spellcheckDefault - проверка орфографии в полях ввода. 0 - выключена, меньше красных подчёркиваний и работы.
+
+// reader.
+user_pref("reader.parse-on-load.enabled", false); //reader.parse-on-load.enabled - разбор каждой загружаемой страницы для режима чтения. Режим чтения мы скрыли, зря не парсим.
+
+// general.
+user_pref("general.autoScroll", true); //general.autoScroll - прокрутка страницы средней кнопкой мыши, на линуксе по умолчанию выключена.
+
+// widget.
+user_pref("widget.gtk.rounded-bottom-corners.enabled", false); //widget.gtk.rounded-bottom-corners.enabled - скругление нижних углов окна на GTK. Выключаем, углы прямые.
