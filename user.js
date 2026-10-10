@@ -177,6 +177,18 @@ user_pref("browser.cache.jsbc_compression_level", 3); //browser.cache.jsbc_compr
 user_pref("browser.sessionhistory.max_total_viewers", 4); //browser.sessionhistory.max_total_viewers - сколько страниц держать в памяти для мгновенной кнопки 'назад' (bfcache). 4 - баланс скорости и памяти.
 user_pref("browser.tabs.hoverPreview.enabled", false); //browser.tabs.hoverPreview.enabled - превью вкладок при наведении. Не рендерим миниатюры.
 user_pref("browser.tabs.hoverPreview.showThumbnails", false); //browser.tabs.hoverPreview.showThumbnails - миниатюры в превью вкладок. Выключаем.
+user_pref("browser.smartwindow.enabled", false); //browser.smartwindow.enabled - AI-окно (Smart Window) целиком. Встроенный ИИ-ассистент, который видит твои вкладки и историю. Нет.
+user_pref("browser.smartwindow.agent.enabled", false); //browser.smartwindow.agent.enabled - AI-агент, который сам кликает и действует в браузере. Нет.
+user_pref("browser.smartwindow.smartformfill.enabled", false); //browser.smartwindow.smartformfill.enabled - умное заполнение форм через ИИ. Содержимое форм уходит модели, нет.
+user_pref("browser.smartwindow.memories.generateFromHistory", false); //browser.smartwindow.memories.generateFromHistory - 'память' ассистента, собранная из твоей истории посещений. Профилирование.
+user_pref("browser.smartwindow.memories.generateFromConversation", false); //browser.smartwindow.memories.generateFromConversation - 'память' ассистента из твоих разговоров с ним. Тоже нет.
+user_pref("browser.ipProtection.enabled", false); //browser.ipProtection.enabled - встроенный VPN/прокси от мозилы (IP Protection). Весь трафик через их серверы, а я не хочу доверять им ещё и трафик.
+user_pref("browser.ipProtection.autoStartEnabled", false); //browser.ipProtection.autoStartEnabled - автозапуск IP Protection. Выключено, чтобы сам не включался.
+user_pref("browser.uidensity", 1); //browser.uidensity - плотность интерфейса. 0 - обычная, 1 - компактная, меньше пустого места.
+user_pref("browser.compactmode.show", true); //browser.compactmode.show - показывает пункт 'Компактный' в настройке панелей. Меньше места, больше контента.
+user_pref("browser.urlbar.openViewOnFocus", false); //browser.urlbar.openViewOnFocus - выпадашка с подсказками при клике в адресную строку. Без ввода она не нужна.
+user_pref("browser.urlbar.maxRichResults", 5); //browser.urlbar.maxRichResults - сколько подсказок показывать в адресной строке. 5 вместо 10, короче список.
+user_pref("browser.tabs.tabmanager.enabled", false); //browser.tabs.tabmanager.enabled - кнопка 'список всех вкладок'. С вертикальными вкладками лишняя.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -245,6 +257,7 @@ user_pref("network.dnsCacheExpiration", 3600); //network.dnsCacheExpiration - с
 user_pref("sidebar.verticalTabs", true); //sidebar.verticalTabs - включение вертикальных вкладок, это мега имба, кто говорит обратное - еще не пробовал.
 user_pref("sidebar.verticalTabs.dragToPinPromo.dismissed", true); //sidebar.verticalTabs.dragToPinPromo.dismissed - убрать подсказку тупорылую с сайдбара.
 user_pref("sidebar.main.tools", ""); //sidebar.main.tools - список всяких вкладок внизу сайдбара (там был ии чат бот).
+user_pref("sidebar.visibility", "expand-on-hover"); //sidebar.visibility - боковая панель вертикальных вкладок. expand-on-hover - сжимается до иконок и раскрывается при наведении, освобождает место.
 
 // ui.
 user_pref("ui.systemUsesDarkTheme", 1); //ui.systemUsesDarkTheme - принудительно выставляем темную тему (выдаем за системную).
