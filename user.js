@@ -89,6 +89,14 @@ user_pref("browser.shell.checkDefaultBrowser", false); //browser.shell.checkDefa
 user_pref("browser.preferences.moreFromMozilla", false); //browser.preferences.moreFromMozilla - секция 'Больше от Mozilla' в настройках. Реклама других продуктов.
 user_pref("browser.aboutwelcome.enabled", false); //browser.aboutwelcome.enabled - страница приветствия после обновлений. Неинтересно.
 user_pref("browser.messaging-system.whatsNewPanel.enabled", false); //browser.messaging-system.whatsNewPanel.enabled - панель 'что нового' после обновлений. Мозила не должна отвлекать.
+user_pref("browser.ml.enable", false); //browser.ml.enable - общий рубильник ML в firefox. Пока неясно что и куда шлёт, вырубаем.
+user_pref("browser.ml.chat.enabled", false); //browser.ml.chat.enabled - AI-чат в боковой панели. Не надо.
+user_pref("browser.ml.chat.menu", false); //browser.ml.chat.menu - пункт AI-чата в контекстном меню. Убираем.
+user_pref("browser.ml.chat.sidebar", false); //browser.ml.chat.sidebar - AI-чат в сайдбаре. Убираем и отсюда.
+user_pref("browser.ml.linkPreview.enabled", false); //browser.ml.linkPreview.enabled - AI-превью ссылок, URL уходит на сервер. Нет.
+user_pref("browser.ai.control.default", "blocked"); //browser.ai.control.default - общий контроль AI-функций. blocked - сайты и браузер не могут использовать встроенный AI.
+user_pref("browser.tabs.groups.smart.enabled", false); //browser.tabs.groups.smart.enabled - умные группы вкладок через ML. Названия вкладок обрабатываются моделью, не надо.
+user_pref("browser.translations.enable", false); //browser.translations.enable - встроенный переводчик. Работает локально, но качает модели с серверов мозилы. Нужен - поставлю расширение.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
