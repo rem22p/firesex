@@ -20,6 +20,13 @@ user_pref("privacy.globalprivacycontrol.enabled", true); //privacy.globalprivacy
 user_pref("privacy.globalprivacycontrol.pbmode.enabled", true); //privacy.globalprivacycontrol.pbmode.enabled - то же самое в приватных окнах.
 user_pref("privacy.bounceTrackingProtection.mode", 1); //privacy.bounceTrackingProtection.mode - защита от bounce-трекинга (редирект через трекер, чтобы поставить куку). 1 - включена.
 user_pref("privacy.antitracking.isolateContentScriptResources", true); //privacy.antitracking.isolateContentScriptResources - изоляция ресурсов скриптов дополнений. Расширения не должны шарить ресурсы между сайтами.
+user_pref("privacy.sanitize.sanitizeOnShutdown", true); //privacy.sanitize.sanitizeOnShutdown - очистка при закрытии браузера. Включаем только ради кеша, остальное ниже явно выключено.
+user_pref("privacy.clearOnShutdown_v2.cache", true); //privacy.clearOnShutdown_v2.cache - чистить кеш при выходе. Быстрый кеш во время работы и никаких следов после.
+user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false); //privacy.clearOnShutdown_v2.cookiesAndStorage - куки и хранилища при выходе НЕ чистим, иначе разлогинивает везде.
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); //privacy.clearOnShutdown_v2.historyFormDataAndDownloads - историю, формы и загрузки НЕ чистим.
+user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false); //privacy.clearOnShutdown_v2.browsingHistoryAndDownloads - историю и загрузки НЕ чистим. Дубль для надёжности.
+user_pref("privacy.clearOnShutdown_v2.formdata", false); //privacy.clearOnShutdown_v2.formdata - данные форм НЕ чистим. Автозаполнение и так выключено.
+user_pref("privacy.clearOnShutdown_v2.siteSettings", false); //privacy.clearOnShutdown_v2.siteSettings - настройки и разрешения сайтов НЕ чистим.
 
 // accessibility.
 user_pref("accessibility.AOM.enabled", false); //accessibility.AOM.enabled - открывает сайтам прямой доступ к управлению экранным диктором через JavaScript, что позволяет разработчикам адаптировать сложные веб-приложения для незрячих, но одновременно дает трекерам инструмент для скрытой слежки за пользователем. +1 флаг в цифром досье, говно.
@@ -140,7 +147,7 @@ user_pref("browser.urlbar.merino.endpointURL", ""); //browser.urlbar.merino.endp
 user_pref("browser.urlbar.speculativeConnect.enabled", false); //browser.urlbar.speculativeConnect.enabled - соединение с сервером ещё до нажатия Enter в urlbar.
 user_pref("browser.places.speculativeConnect.enabled", false); //browser.places.speculativeConnect.enabled - соединение при наведении на закладки и историю.
 user_pref("browser.xul.error_pages.expert_bad_cert", true); //browser.xul.error_pages.expert_bad_cert - расширенная информация на страницах ошибок сертификатов. Видно, что именно не так.
-user_pref("browser.cache.disk.enable", false); //browser.cache.disk.enable - дисковый кеш. На SSD и так быстро, а кеш оставляет следы посещённых сайтов.
+user_pref("browser.cache.disk.enable", true); //browser.cache.disk.enable - дисковый кеш. Страницы, картинки и скрипты не качаются заново на каждой вкладке и после перезапуска, это самое заметное ускорение. Следов не остаётся, потому что кеш чистится при выходе (см. privacy.clearOnShutdown_v2.cache).
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true); //browser.privatebrowsing.forceMediaMemoryCache - медиакеш в памяти, а не на диске, в приватном режиме.
 user_pref("browser.sessionstore.privacy_level", 2); //browser.sessionstore.privacy_level - что сохранять в сессию. 0 - всё, 1 - кроме HTTPS, 2 - ничего лишнего (формы, куки).
 user_pref("browser.pagethumbnails.capturing_disabled", true); //browser.pagethumbnails.capturing_disabled - миниатюры страниц на диске. Не делаем снимков того, что ты смотрел.
@@ -154,6 +161,8 @@ user_pref("browser.download.manager.addToRecentDocs", false); //browser.download
 user_pref("browser.download.always_ask_before_handling_new_types", true); //browser.download.always_ask_before_handling_new_types - спрашивать, что делать с новыми типами файлов. Безопаснее, чем открывать молча.
 user_pref("browser.download.useDownloadDir", false); //browser.download.useDownloadDir - всегда спрашивать, куда сохранять. Контроль над тем, что и куда падает.
 user_pref("browser.contentanalysis.enabled", false); //browser.contentanalysis.enabled - DLP-агенты (Data Loss Prevention) для корпоративных машин. Домашнему пользователю не нужно, лишний канал.
+user_pref("browser.cache.disk.capacity", 524288); //browser.cache.disk.capacity - размер дискового кеша в КБ. 524288 = 512 МБ, хватает на 10-15 вкладок и не раздувает диск.
+user_pref("browser.cache.disk.smart_size.enabled", false); //browser.cache.disk.smart_size.enabled - авто-размер кеша по свободному месту на диске. Выключаем, чтобы работал фиксированный лимит выше.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
