@@ -189,6 +189,7 @@ user_pref("browser.compactmode.show", true); //browser.compactmode.show - пок
 user_pref("browser.urlbar.openViewOnFocus", false); //browser.urlbar.openViewOnFocus - выпадашка с подсказками при клике в адресную строку. Без ввода она не нужна.
 user_pref("browser.urlbar.maxRichResults", 5); //browser.urlbar.maxRichResults - сколько подсказок показывать в адресной строке. 5 вместо 10, короче список.
 user_pref("browser.tabs.tabmanager.enabled", false); //browser.tabs.tabmanager.enabled - кнопка 'список всех вкладок'. С вертикальными вкладками лишняя.
+user_pref("browser.display.background_color.dark", "#000000"); //browser.display.background_color.dark - цвет фона страниц без своего фона в тёмной теме (новая вкладка, пустая страница). По умолчанию #1c1b22, тот самый противный серо-синий. Теперь чёрный.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
