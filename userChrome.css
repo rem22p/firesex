@@ -52,3 +52,7 @@
 #forward-button[disabled] {
     display: none !important;
 }
+
+.titlebar-close {
+    display: none !important;
+}
