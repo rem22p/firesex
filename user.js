@@ -139,6 +139,12 @@ user_pref("browser.urlbar.merino.endpointURL", ""); //browser.urlbar.merino.endp
 user_pref("browser.urlbar.speculativeConnect.enabled", false); //browser.urlbar.speculativeConnect.enabled - соединение с сервером ещё до нажатия Enter в urlbar.
 user_pref("browser.places.speculativeConnect.enabled", false); //browser.places.speculativeConnect.enabled - соединение при наведении на закладки и историю.
 user_pref("browser.xul.error_pages.expert_bad_cert", true); //browser.xul.error_pages.expert_bad_cert - расширенная информация на страницах ошибок сертификатов. Видно, что именно не так.
+user_pref("browser.cache.disk.enable", false); //browser.cache.disk.enable - дисковый кеш. На SSD и так быстро, а кеш оставляет следы посещённых сайтов.
+user_pref("browser.privatebrowsing.forceMediaMemoryCache", true); //browser.privatebrowsing.forceMediaMemoryCache - медиакеш в памяти, а не на диске, в приватном режиме.
+user_pref("browser.sessionstore.privacy_level", 2); //browser.sessionstore.privacy_level - что сохранять в сессию. 0 - всё, 1 - кроме HTTPS, 2 - ничего лишнего (формы, куки).
+user_pref("browser.pagethumbnails.capturing_disabled", true); //browser.pagethumbnails.capturing_disabled - миниатюры страниц на диске. Не делаем снимков того, что ты смотрел.
+user_pref("browser.shell.shortcutFavicons", false); //browser.shell.shortcutFavicons - иконки сайтов в ярлыках на рабочем столе. Лишний след.
+user_pref("browser.formfill.enable", false); //browser.formfill.enable - автозаполнение форм и история поиска. Третьи лица могут считать данные через скрытые поля.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -174,6 +180,8 @@ user_pref("geo.enabled", false); //geo.enabled - геолокация целик
 // permissions.
 user_pref("permissions.default.geo", 2); //permissions.default.geo - политика геолокации для всех сайтов.
 user_pref("permissions.manager.defaultsUrl", ""); //permissions.manager.defaultsUrl - адрес списка предустановленных разрешений от мозилы. Не нужно, чтобы она раздавала разрешения за меня.
+user_pref("permissions.default.desktop-notification", 2); //permissions.default.desktop-notification - запрос на уведомления. 0 - спрашивать, 2 - блокировать молча.
+user_pref("permissions.default.xr", 2); //permissions.default.xr - запрос на доступ к VR/AR. Блокируем.
 
 // captivedetect.
 user_pref("captivedetect.canonicalURL", ""); //captivedetect.canonicalURL - url для проверки captive portal. Браузер стучиться на сервер мозилы при подключении к любому wifi, тем самым раскрывая факт подключения к новой сети.
@@ -217,6 +225,9 @@ user_pref("dom.battery.enabled", false); //dom.battery.enabled - Battery API. З
 user_pref("dom.gamepad.enabled", false); //dom.gamepad.enabled - Gamepad API, сайт видит подключённые геймпады. Ещё один бит отпечатка.
 user_pref("dom.netinfo.enabled", false); //dom.netinfo.enabled - Network Information API, тип и скорость соединения для сайтов.
 user_pref("dom.vr.enabled", false); //dom.vr.enabled - WebVR, сайт видит VR-устройства. Нам не надо.
+user_pref("dom.webnotifications.enabled", false); //dom.webnotifications.enabled - Web Notifications API. Сайты не будут слать уведомления вообще.
+user_pref("dom.push.enabled", false); //dom.push.enabled - Push API, сайты будят браузер в фоне. Нет.
+user_pref("dom.disable_window_move_resize", true); //dom.disable_window_move_resize - запрещает сайтам двигать и ресайзить окна. Меньше контроля у скриптов.
 
 // beacon.
 user_pref("beacon.enabled", false); //beacon.enabled - navigator.sendBeacon - отправка данных при закрытии страницы, основной инструмент аналитики и трекеров. Минус - иногда ломается отправка на сайтах, плюс - трекерам хуже.
@@ -240,6 +251,8 @@ user_pref("extensions.htmlaboutaddons.recommendations.enabled", false); //extens
 user_pref("extensions.getAddons.discovery.api_url", ""); //extensions.getAddons.discovery.api_url - api-адрес для вкладки обнаружения дополнений. Затираю.
 user_pref("extensions.abuseReport.enabled", false); //extensions.abuseReport.enabled - встроенная жалоба на дополнения в мозилу. Отправляет данные о дополнении и профиле, если нажать. Не нужна.
 user_pref("extensions.systemAddon.update.enabled", false); //extensions.systemAddon.update.enabled - обновление системных дополнений мозилы без твоего участия. Мозила не должна ставить в мой браузер что-то втихаря.
+user_pref("extensions.formautofill.addresses.enabled", false); //extensions.formautofill.addresses.enabled - автозаполнение адресов. Адрес хранится в профиле, читается любой формой.
+user_pref("extensions.formautofill.creditCards.enabled", false); //extensions.formautofill.creditCards.enabled - автозаполнение банковских карт. Карты в браузере - плохая идея.
 
 // browser.contentblocking.
 user_pref("browser.contentblocking.report.lockwise.enabled", false); //browser.contentblocking.report.lockwise.enabled - реклама Lockwise в отчёте о защите. Нам не надо.
@@ -281,3 +294,13 @@ user_pref("device.sensors.motion.enabled", false); //device.sensors.motion.enabl
 user_pref("device.sensors.orientation.enabled", false); //device.sensors.orientation.enabled - датчик ориентации. Выключаем отдельно.
 user_pref("device.sensors.ambientLight.enabled", false); //device.sensors.ambientLight.enabled - датчик освещённости. Выключаем отдельно.
 user_pref("device.sensors.proximity.enabled", false); //device.sensors.proximity.enabled - датчик приближения. Выключаем отдельно.
+
+// signon.
+user_pref("signon.autofillForms", false); //signon.autofillForms - автозаполнение логинов. Может утекать через скрытые формы на странице. Вставляем руками.
+user_pref("signon.formlessCapture.enabled", false); //signon.formlessCapture.enabled - захват паролей из форм без явной кнопки. Меньше шанс сохранить левое.
+user_pref("signon.generation.enabled", false); //signon.generation.enabled - генератор паролей в браузере. Пароли генерим там, где их потом хранить.
+user_pref("signon.management.page.breach-alerts.enabled", false); //signon.management.page.breach-alerts.enabled - проверка паролей по базе утечек (Mozilla Monitor). Шлёт запросы на сервер.
+user_pref("signon.firefoxRelay.feature", "disabled"); //signon.firefoxRelay.feature - Firefox Relay - реклама почтовых алиасов от мозилы. Отключено.
+
+// pdfjs.
+user_pref("pdfjs.enableScripting", false); //pdfjs.enableScripting - выполнение JavaScript в PDF. PDF не должен исполнять код.
