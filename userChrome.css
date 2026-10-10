@@ -113,3 +113,9 @@
     background-image: none !important;
     background-color: rgba(0, 0, 0, 0.92) !important;
 }
+
+/* hide text labels in the urlbar and toolbar buttons (the "Not secure" label stays on purpose) */
+#urlbar-label-box,
+#nav-bar .toolbarbutton-text {
+    display: none !important;
+}
