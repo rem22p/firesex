@@ -190,6 +190,7 @@ user_pref("browser.urlbar.openViewOnFocus", false); //browser.urlbar.openViewOnF
 user_pref("browser.urlbar.maxRichResults", 5); //browser.urlbar.maxRichResults - сколько подсказок показывать в адресной строке. 5 вместо 10, короче список.
 user_pref("browser.tabs.tabmanager.enabled", false); //browser.tabs.tabmanager.enabled - кнопка 'список всех вкладок'. С вертикальными вкладками лишняя.
 user_pref("browser.tabs.allow_transparent_browser", true); //browser.tabs.allow_transparent_browser - разрешает области страницы быть прозрачной. Без него Firefox красит фон вкладки непрозрачным цветом (тот самый серо-синий), и userContent.css с прозрачным фоном не помогает.
+user_pref("browser.startup.homepage", "about:blank"); //browser.startup.homepage - домашняя страница и страница нового окна. about:blank - пустая, без Firefox Home с логотипом и поиском посередине. Вкладки по Ctrl+T и так пустые из-за browser.newtabpage.enabled.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
