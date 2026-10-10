@@ -119,3 +119,33 @@
 #nav-bar .toolbarbutton-text {
     display: none !important;
 }
+
+/* auto-hide the toolbar: a 4px strip stays on top, hover or focus slides the nav bar in */
+#navigator-toolbox::before {
+    content: "";
+    display: block;
+    height: 4px;
+}
+
+#navigator-toolbox {
+    position: relative;
+    z-index: 100;
+}
+
+#nav-bar {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    background-color: rgba(0, 0, 0, 0.92) !important;
+}
+
+#navigator-toolbox:hover #nav-bar,
+#navigator-toolbox:focus-within #nav-bar,
+:root[customizing] #nav-bar {
+    transform: translateY(0);
+    opacity: 1;
+}
