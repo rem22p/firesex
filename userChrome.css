@@ -105,3 +105,10 @@
     border: none !important;
     box-shadow: none !important;
 }
+
+/* expanded vertical tabs panel paints an opaque #202020 backdrop over the transparent surface, make it black */
+#sidebar-container[sidebar-launcher-expanded],
+#sidebar-container[sidebar-ongoing-animations] {
+    background-image: none !important;
+    background-color: rgba(0, 0, 0, 0.92) !important;
+}
