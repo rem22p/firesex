@@ -56,3 +56,44 @@
 .titlebar-close {
     display: none !important;
 }
+
+/* black / transparent chrome. --fx-bg alpha: 1 = solid black, 0.55 = see-through (needs a compositor) */
+:root {
+    --fx-bg: rgba(0, 0, 0, 0.55);
+    --fx-field: rgba(255, 255, 255, 0.08);
+    --lwt-accent-color: transparent !important;
+    --toolbar-bgcolor: transparent !important;
+    --tabpanel-background-color: transparent !important;
+    --sidebar-background-color: transparent !important;
+    --toolbar-field-background-color: var(--fx-field) !important;
+    --toolbarbutton-hover-background: rgba(255, 255, 255, 0.12) !important;
+    --panel-background: #0b0b0b !important;
+}
+
+#main-window,
+#navigator-toolbox,
+#titlebar,
+#nav-bar,
+#TabsToolbar,
+#PersonalToolbar,
+#sidebar-main,
+#vertical-tabs,
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    appearance: none !important;
+}
+
+#main-window {
+    background-color: var(--fx-bg) !important;
+}
+
+#urlbar-background,
+#searchbar {
+    background: var(--fx-field) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
