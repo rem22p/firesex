@@ -145,6 +145,8 @@ user_pref("browser.sessionstore.privacy_level", 2); //browser.sessionstore.priva
 user_pref("browser.pagethumbnails.capturing_disabled", true); //browser.pagethumbnails.capturing_disabled - миниатюры страниц на диске. Не делаем снимков того, что ты смотрел.
 user_pref("browser.shell.shortcutFavicons", false); //browser.shell.shortcutFavicons - иконки сайтов в ярлыках на рабочем столе. Лишний след.
 user_pref("browser.formfill.enable", false); //browser.formfill.enable - автозаполнение форм и история поиска. Третьи лица могут считать данные через скрытые поля.
+user_pref("browser.search.serpEventTelemetryCategorization.enabled", false); //browser.search.serpEventTelemetryCategorization.enabled - категоризация поисковой выдачи для телеметрии: мозила классифицирует, что ты искал. Нет.
+user_pref("browser.tabs.crashReporting.includeURL", false); //browser.tabs.crashReporting.includeURL - добавлять URL упавшей вкладки в краш-репорт. Репорты и так не шлём, но URL точно не нужен.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -162,11 +164,15 @@ user_pref("browser.newtabpage.activity-stream.discoverystream.enabled", false); 
 user_pref("browser.newtabpage.activity-stream.discoverystream.sponsored-collections.enabled", false); //browser.newtabpage.activity-stream.discoverystream.sponsored-collections.enabled - спонсорские коллекции в ленте. Реклама.
 user_pref("browser.newtabpage.activity-stream.discoverystream.spocs.personalized", false); //browser.newtabpage.activity-stream.discoverystream.spocs.personalized - персонализация рекламы в ленте. Только этого не хватало.
 user_pref("browser.newtabpage.activity-stream.discoverystream.recs.personalized", false); //browser.newtabpage.activity-stream.discoverystream.recs.personalized - персонализация рекомендаций в ленте. Нет.
+user_pref("browser.newtabpage.activity-stream.discoverystream.reportAds.enabled", false); //browser.newtabpage.activity-stream.discoverystream.reportAds.enabled - отправка жалоб и отчётов о рекламе в ленте новой вкладки. Рекламы у нас нет, отчёты тоже.
+user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.enabled", false); //browser.newtabpage.activity-stream.telemetry.privatePing.enabled - приватный пинг телеметрии новой вкладки (через прокси OHTTP). Приватный - не значит нужный, выключаем.
+user_pref("browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled", false); //browser.newtabpage.activity-stream.telemetry.privatePing.inferredInterests.enabled - отправка выведенных из истории интересов в пинге новой вкладки. Профилирование, нет.
 
 // app.
 user_pref("app.shield.optoutstudies.enabled", false); //app.shield.optoutstudies.enabled - мозила тестирует эксперементальные фичи на случайных пользователях. Если не выключить то ты потенуиально подопытный.
 user_pref("app.normandy.enabled", false); //app.normandy.enabled - normandy это система удаленного управления браузером, мозила может менять настройки, запускать опросы и так далее, буквально бекдор. 1000% октлючение.
 user_pref("app.normandy.api_url", ""); //app.normandy.api_url -  url normandy сервера через который и происходит удаленное управление.
+user_pref("app.feedback.baseURL", ""); //app.feedback.baseURL - адрес страницы отправки отзывов. Затираю.
 
 // breakpad.
 user_pref("breakpad.reportURL", ""); //breakpad.reportURL - url для отправки краш-репортов, затираю.
@@ -210,6 +216,7 @@ user_pref("sidebar.main.tools", ""); //sidebar.main.tools - список вся�
 
 // ui.
 user_pref("ui.systemUsesDarkTheme", 1); //ui.systemUsesDarkTheme - принудительно выставляем темную тему (выдаем за системную).
+user_pref("ui.new-webcompat-reporter.enabled", false); //ui.new-webcompat-reporter.enabled - кнопка 'Сообщить о проблеме с сайтом', отправляет мозиле URL и данные браузера. Не нужна.
 
 // telemetry.
 user_pref("telemetry.fog.init_on_shutdown", false); //telemetry.fog.init_on_shutdown - FOG (Firefox on Glean) - новая система телеметрии на замену старой. Инициализация при выходе нужна только чтобы отправить данные. Не надо.
@@ -228,6 +235,8 @@ user_pref("dom.vr.enabled", false); //dom.vr.enabled - WebVR, сайт види�
 user_pref("dom.webnotifications.enabled", false); //dom.webnotifications.enabled - Web Notifications API. Сайты не будут слать уведомления вообще.
 user_pref("dom.push.enabled", false); //dom.push.enabled - Push API, сайты будят браузер в фоне. Нет.
 user_pref("dom.disable_window_move_resize", true); //dom.disable_window_move_resize - запрещает сайтам двигать и ресайзить окна. Меньше контроля у скриптов.
+user_pref("dom.security.unexpected_system_load_telemetry_enabled", false); //dom.security.unexpected_system_load_telemetry_enabled - телеметрия о необычной нагрузке системы. Нет.
+user_pref("dom.webcomponents.shadowdom.report_usage", false); //dom.webcomponents.shadowdom.report_usage - счётчики использования shadow DOM для телеметрии. Нет.
 
 // beacon.
 user_pref("beacon.enabled", false); //beacon.enabled - navigator.sendBeacon - отправка данных при закрытии страницы, основной инструмент аналитики и трекеров. Минус - иногда ломается отправка на сайтах, плюс - трекерам хуже.
@@ -284,6 +293,7 @@ user_pref("security.ssl3.rsa_aes_128_sha", false); //security.ssl3.rsa_aes_128_s
 user_pref("security.ssl3.rsa_aes_256_sha", false); //security.ssl3.rsa_aes_256_sha - тоже без forward secrecy. Выключаем.
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false); //security.ssl3.dhe_rsa_aes_128_sha - DHE с SHA-1, слабый шифр. Выключаем.
 user_pref("security.ssl3.dhe_rsa_aes_256_sha", false); //security.ssl3.dhe_rsa_aes_256_sha - то же самое для AES-256. Выключаем.
+user_pref("security.csp.reporting.enabled", false); //security.csp.reporting.enabled - отправка отчётов о нарушениях Content Security Policy. Сайты могут узнать о тебе через CSP-отчёты.
 
 // webgl.
 user_pref("webgl.enable-debug-renderer-info", false); //webgl.enable-debug-renderer-info - расширение WEBGL_debug_renderer_info отдаёт сайтам точную модель видеокарты и драйвера. Мощный фингерпринт.
