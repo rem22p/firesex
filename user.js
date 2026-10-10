@@ -3,6 +3,22 @@ user_pref("about.glean.redesign.enabled", false); //about.glean.redesign.enabled
 
 // privacy.
 user_pref("privacy.resistFingerprinting.randomization.canvas.use_siphash", true); //privacy.resistFingerprinting.randomization.canvas.use_siphash (false) - делает защиту от канвасного фингерпринтинга криптографически неуязвимой для реверс инжениринга. Теоретически улучшает безопасность, включу.
+user_pref("privacy.fingerprintingProtection", true); //privacy.fingerprintingProtection - защита от фингерпринтинга во всех окнах, а не только в приватных.
+user_pref("privacy.fingerprintingProtection.pbmode", true); //privacy.fingerprintingProtection.pbmode - то же самое в приватных окнах. По умолчанию и так true, но прописываю явно.
+user_pref("privacy.fingerprintingProtection.remoteOverrides.enabled", false); //privacy.fingerprintingProtection.remoteOverrides.enabled - удалённые исключения из защиты. Мозила не будет решать, где меня можно фингерпринтить.
+user_pref("privacy.baselineFingerprintingProtection", true); //privacy.baselineFingerprintingProtection - базовая защита от фингерпринтинга, рандомизация самых наглых векторов.
+user_pref("privacy.trackingprotection.enabled", true); //privacy.trackingprotection.enabled - защита от трекинга в обычных окнах. strict включает и так, но пусть будет явно.
+user_pref("privacy.trackingprotection.pbmode.enabled", true); //privacy.trackingprotection.pbmode.enabled - защита от трекинга в приватных окнах.
+user_pref("privacy.trackingprotection.fingerprinting.enabled", true); //privacy.trackingprotection.fingerprinting.enabled - блокировка известных фингерпринтеров по списку.
+user_pref("privacy.trackingprotection.cryptomining.enabled", true); //privacy.trackingprotection.cryptomining.enabled - блокировка скриптов майнеров. Мой процессор - не твой.
+user_pref("privacy.trackingprotection.socialtracking.enabled", true); //privacy.trackingprotection.socialtracking.enabled - блокировка трекеров соцсетей (кнопки лайков и так далее).
+user_pref("privacy.trackingprotection.emailtracking.enabled", true); //privacy.trackingprotection.emailtracking.enabled - блокировка трекинг-пикселей в письмах и веб-почте.
+user_pref("privacy.trackingprotection.emailtracking.pbmode.enabled", true); //privacy.trackingprotection.emailtracking.pbmode.enabled - то же самое в приватных окнах.
+user_pref("privacy.query_stripping.enabled", true); //privacy.query_stripping.enabled - вырезает трекинговые параметры (fbclid, gclid и т.д.) из URL.
+user_pref("privacy.query_stripping.enabled.pbmode", true); //privacy.query_stripping.enabled.pbmode - то же самое в приватных окнах.
+user_pref("privacy.globalprivacycontrol.enabled", true); //privacy.globalprivacycontrol.enabled - сигнал Global Privacy Control, 'не продавайте мои данные'. Вреда нет.
+user_pref("privacy.globalprivacycontrol.pbmode.enabled", true); //privacy.globalprivacycontrol.pbmode.enabled - то же самое в приватных окнах.
+user_pref("privacy.bounceTrackingProtection.mode", 1); //privacy.bounceTrackingProtection.mode - защита от bounce-трекинга (редирект через трекер, чтобы поставить куку). 1 - включена.
 
 // accessibility.
 user_pref("accessibility.AOM.enabled", false); //accessibility.AOM.enabled - открывает сайтам прямой доступ к управлению экранным диктором через JavaScript, что позволяет разработчикам адаптировать сложные веб-приложения для незрячих, но одновременно дает трекерам инструмент для скрытой слежки за пользователем. +1 флаг в цифром досье, говно.
@@ -197,6 +213,10 @@ user_pref("dom.reporting.header.enabled", false); //dom.reporting.header.enabled
 user_pref("dom.reporting.featurePolicy.enabled", false); //dom.reporting.featurePolicy.enabled - отчёты о нарушениях feature policy сайту. Тоже Reporting API, тоже выключаем.
 user_pref("dom.security.https_only_mode", true); //dom.security.https_only_mode - HTTPS-Only во всех окнах. HTTP-запросы апгрейдятся, без HTTPS - страница-предупреждение.
 user_pref("dom.security.https_only_mode_send_http_background_request", false); //dom.security.https_only_mode_send_http_background_request - фоновый HTTP-запрос для проверки, нужен ли апгрейд. Лишняя отправка по небезопасному каналу.
+user_pref("dom.battery.enabled", false); //dom.battery.enabled - Battery API. Заряд и время до разрядки - отличный идентификатор. Давно убран, но пусть будет.
+user_pref("dom.gamepad.enabled", false); //dom.gamepad.enabled - Gamepad API, сайт видит подключённые геймпады. Ещё один бит отпечатка.
+user_pref("dom.netinfo.enabled", false); //dom.netinfo.enabled - Network Information API, тип и скорость соединения для сайтов.
+user_pref("dom.vr.enabled", false); //dom.vr.enabled - WebVR, сайт видит VR-устройства. Нам не надо.
 
 // beacon.
 user_pref("beacon.enabled", false); //beacon.enabled - navigator.sendBeacon - отправка данных при закрытии страницы, основной инструмент аналитики и трекеров. Минус - иногда ломается отправка на сайтах, плюс - трекерам хуже.
@@ -228,6 +248,7 @@ user_pref("browser.contentblocking.report.proxy.enabled", false); //browser.cont
 user_pref("browser.contentblocking.report.show_mobile_app", false); //browser.contentblocking.report.show_mobile_app - реклама мобильного приложения в отчёте о защите. Нет.
 user_pref("browser.contentblocking.report.hide_vpn_banner", true); //browser.contentblocking.report.hide_vpn_banner - прячет баннер VPN в отчёте о защите.
 user_pref("browser.contentblocking.cfr-milestone.enabled", false); //browser.contentblocking.cfr-milestone.enabled - поздравления вида 'мы заблокировали 1000 трекеров'. Нахрен.
+user_pref("browser.contentblocking.category", "strict"); //browser.contentblocking.category - режим защиты от трекинга. strict включает Total Cookie Protection и блокировку фингерпринтеров.
 
 // startup.
 user_pref("startup.homepage_welcome_url", ""); //startup.homepage_welcome_url - страница приветствия при первом запуске. Затираю.
@@ -250,3 +271,13 @@ user_pref("security.ssl3.rsa_aes_128_sha", false); //security.ssl3.rsa_aes_128_s
 user_pref("security.ssl3.rsa_aes_256_sha", false); //security.ssl3.rsa_aes_256_sha - тоже без forward secrecy. Выключаем.
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false); //security.ssl3.dhe_rsa_aes_128_sha - DHE с SHA-1, слабый шифр. Выключаем.
 user_pref("security.ssl3.dhe_rsa_aes_256_sha", false); //security.ssl3.dhe_rsa_aes_256_sha - то же самое для AES-256. Выключаем.
+
+// webgl.
+user_pref("webgl.enable-debug-renderer-info", false); //webgl.enable-debug-renderer-info - расширение WEBGL_debug_renderer_info отдаёт сайтам точную модель видеокарты и драйвера. Мощный фингерпринт.
+
+// device.
+user_pref("device.sensors.enabled", false); //device.sensors.enabled - доступ сайтов к датчикам устройства. Гироскоп, акселерометр - отпечаток и вектор атак.
+user_pref("device.sensors.motion.enabled", false); //device.sensors.motion.enabled - датчик движения. Выключаем отдельно.
+user_pref("device.sensors.orientation.enabled", false); //device.sensors.orientation.enabled - датчик ориентации. Выключаем отдельно.
+user_pref("device.sensors.ambientLight.enabled", false); //device.sensors.ambientLight.enabled - датчик освещённости. Выключаем отдельно.
+user_pref("device.sensors.proximity.enabled", false); //device.sensors.proximity.enabled - датчик приближения. Выключаем отдельно.
