@@ -97,6 +97,29 @@ user_pref("browser.ml.linkPreview.enabled", false); //browser.ml.linkPreview.ena
 user_pref("browser.ai.control.default", "blocked"); //browser.ai.control.default - общий контроль AI-функций. blocked - сайты и браузер не могут использовать встроенный AI.
 user_pref("browser.tabs.groups.smart.enabled", false); //browser.tabs.groups.smart.enabled - умные группы вкладок через ML. Названия вкладок обрабатываются моделью, не надо.
 user_pref("browser.translations.enable", false); //browser.translations.enable - встроенный переводчик. Работает локально, но качает модели с серверов мозилы. Нужен - поставлю расширение.
+user_pref("browser.search.suggest.enabled", false); //browser.search.suggest.enabled - живые подсказки поиска: каждая буква улетает поисковику. Хватит.
+user_pref("browser.search.update", false); //browser.search.update - автообновление списка поисковых движков. Мозила не будет решать какие поисковики мне доступны.
+user_pref("browser.search.geoSpecificDefaults", false); //browser.search.geoSpecificDefaults - поисковик по умолчанию в зависимости от региона. Для этого браузер определяет твой регион, а оно нам не надо.
+user_pref("browser.search.region.network.url", ""); //browser.search.region.network.url - адрес, по которому firefox определяет твою страну. Затираю.
+user_pref("browser.region.network.url", ""); //browser.region.network.url - ещё один адрес определения региона. Затираю.
+user_pref("browser.region.update.enabled", false); //browser.region.update.enabled - обновление региона по сети. Не нужно.
+user_pref("browser.urlbar.suggest.searches", false); //browser.urlbar.suggest.searches - подсказки поиска в адресной строке. Парный преф к browser.search.suggest.enabled.
+user_pref("browser.urlbar.suggest.trending", false); //browser.urlbar.suggest.trending - трендовые запросы в urlbar. Мы сами знаем что искать.
+user_pref("browser.urlbar.suggest.weather", false); //browser.urlbar.suggest.weather - погода в urlbar. Браузер не метеостанция.
+user_pref("browser.urlbar.suggest.recentsearches", false); //browser.urlbar.suggest.recentsearches - недавние поиски в urlbar. Лишнее хранение истории поиска.
+user_pref("browser.urlbar.quicksuggest.enabled", false); //browser.urlbar.quicksuggest.enabled - Firefox Suggest, рекламные подсказки от партнёров. В помойку.
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); //browser.urlbar.suggest.quicksuggest.sponsored - спонсорские подсказки Firefox Suggest. Реклама в адресной строке.
+user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); //browser.urlbar.suggest.quicksuggest.nonsponsored - неспонсорские подсказки Firefox Suggest. Всё равно уходит на сервер.
+user_pref("browser.urlbar.trending.featureGate", false); //browser.urlbar.trending.featureGate - функция трендовых запросов. Выключаем на уровне фичи.
+user_pref("browser.urlbar.addons.featureGate", false); //browser.urlbar.addons.featureGate - предложения дополнений в urlbar. Сами найдём.
+user_pref("browser.urlbar.mdn.featureGate", false); //browser.urlbar.mdn.featureGate - подсказки MDN в urlbar. Каждый ввод летит на сервер.
+user_pref("browser.urlbar.weather.featureGate", false); //browser.urlbar.weather.featureGate - погода в urlbar на уровне фичи.
+user_pref("browser.urlbar.wikipedia.featureGate", false); //browser.urlbar.wikipedia.featureGate - подсказки википедии в urlbar. Запрос уходит на сервер.
+user_pref("browser.urlbar.yelp.featureGate", false); //browser.urlbar.yelp.featureGate - отзывы Yelp в urlbar. Зачем это здесь.
+user_pref("browser.urlbar.amp.featureGate", false); //browser.urlbar.amp.featureGate - AMP-подсказки (adMarketplace) в urlbar. Реклама.
+user_pref("browser.urlbar.fakespot.featureGate", false); //browser.urlbar.fakespot.featureGate - Fakespot (проверка отзывов) в urlbar. Мозила купила и пихает.
+user_pref("browser.urlbar.groupLabels.enabled", false); //browser.urlbar.groupLabels.enabled - групповые метки в urlbar. Часть Firefox Suggest.
+user_pref("browser.urlbar.merino.endpointURL", ""); //browser.urlbar.merino.endpointURL - адрес сервера Merino, откуда берутся все suggest-подсказки. Затираю.
 
 // browser.newtabpage.
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); //browser.newtabpage.activity-stream.showSponsored - спонсорское говно на новой вкладке.
@@ -108,6 +131,12 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false); //browser.newtabpage.activity-stream.feeds.snippets - месаги от мозилы. Скачай firefox mobile и так далее.
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false); //browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons - контекстные рекомендации от мозилы по поводу дополнений.
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false); //browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features - тоже самое но рекомендации фич.
+user_pref("browser.newtabpage.enabled", false); //browser.newtabpage.enabled - Firefox Home на новой вкладке. false - пустая страница, вся помойка из рекламы и рекомендаций исчезает.
+user_pref("browser.newtabpage.activity-stream.showWeather", false); //browser.newtabpage.activity-stream.showWeather - погода на новой вкладке.
+user_pref("browser.newtabpage.activity-stream.discoverystream.enabled", false); //browser.newtabpage.activity-stream.discoverystream.enabled - ленточка рекомендованных историй на новой вкладке (замена Pocket).
+user_pref("browser.newtabpage.activity-stream.discoverystream.sponsored-collections.enabled", false); //browser.newtabpage.activity-stream.discoverystream.sponsored-collections.enabled - спонсорские коллекции в ленте. Реклама.
+user_pref("browser.newtabpage.activity-stream.discoverystream.spocs.personalized", false); //browser.newtabpage.activity-stream.discoverystream.spocs.personalized - персонализация рекламы в ленте. Только этого не хватало.
+user_pref("browser.newtabpage.activity-stream.discoverystream.recs.personalized", false); //browser.newtabpage.activity-stream.discoverystream.recs.personalized - персонализация рекомендаций в ленте. Нет.
 
 // app.
 user_pref("app.shield.optoutstudies.enabled", false); //app.shield.optoutstudies.enabled - мозила тестирует эксперементальные фичи на случайных пользователях. Если не выключить то ты потенуиально подопытный.
