@@ -25,3 +25,30 @@
 #sidebar-tools-and-extensions-splitter {
     display: none !important;
 }
+
+#ai-window-toggle,
+#smartwindow-group-tabs-button,
+#ipprotection-button {
+    display: none !important;
+}
+
+#reader-mode-button,
+#translations-button,
+#picture-in-picture-button,
+#urlbar-go-button,
+#urlbar-searchmode-switcher,
+#urlbar-share-button {
+    display: none !important;
+}
+
+#context-sendpagetodevice,
+#context-sep-sendpagetodevice,
+#context-sendlinktodevice,
+#context-sep-sendlinktodevice,
+#context-ask-chat {
+    display: none !important;
+}
+
+#forward-button[disabled] {
+    display: none !important;
+}
