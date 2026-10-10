@@ -60,7 +60,7 @@
 /* black / transparent chrome. --fx-bg alpha: 1 = solid black, 0.55 = see-through (needs a compositor) */
 :root {
     --fx-bg: rgba(0, 0, 0, 0.9);
-    --fx-field: rgba(255, 255, 255, 0.08);
+    --fx-field: transparent;
     --toolbox-background-color: transparent !important;
     --toolbox-background-color-inactive: transparent !important;
     --toolbox-background-image: none !important;
@@ -73,6 +73,9 @@
     --lwt-accent-color: transparent !important;
     --toolbar-field-background-color: var(--fx-field) !important;
     --urlbar-box-background-color: var(--fx-field) !important;
+    --urlbar-box-background-color-hover: var(--fx-field) !important;
+    --urlbar-box-background-color-focus: var(--fx-field) !important;
+    --toolbar-field-background-color-focus: var(--fx-field) !important;
     --toolbarbutton-hover-background: rgba(255, 255, 255, 0.12) !important;
     --toolbarbutton-background-color-hover: rgba(255, 255, 255, 0.12) !important;
     --panel-background: #0b0b0b !important;
