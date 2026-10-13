@@ -133,6 +133,17 @@
     background-color: var(--fx-bg) !important;
 }
 
+/* horizontal tabs: the selected tab background defaults to the toolbar color, which is transparent here, so the active tab was invisible */
+#tabbrowser-tabs[orient="horizontal"] {
+    --tab-background-color-selected: rgba(255, 255, 255, 0.14) !important;
+}
+
+@media (prefers-color-scheme: light) {
+    #tabbrowser-tabs[orient="horizontal"] {
+        --tab-background-color-selected: rgba(0, 0, 0, 0.12) !important;
+    }
+}
+
 /* hide text labels in the urlbar and toolbar buttons (the "Not secure" label stays on purpose) */
 #urlbar-label-box,
 #nav-bar .toolbarbutton-text {
