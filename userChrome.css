@@ -120,6 +120,12 @@
     box-shadow: none !important;
 }
 
+/* the dropdown has its own background layer (.urlbarView-background) that reads the transparent field color: keep it opaque, and the input half too so the joint looks like one piece */
+.urlbarView-background,
+#urlbar[open] > #urlbar-background {
+    background: var(--panel-background) !important;
+}
+
 /* expanded vertical tabs panel paints an opaque #202020 backdrop over the transparent surface, make it black */
 #sidebar-container[sidebar-launcher-expanded],
 #sidebar-container[sidebar-ongoing-animations] {
