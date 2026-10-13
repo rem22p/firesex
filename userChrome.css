@@ -144,6 +144,12 @@
     }
 }
 
+/* horizontal tabs: the left launcher strip has nothing but the customize gear left (tools list is empty), hide it. the history/bookmarks sidebar (#sidebar-box) is separate and still works */
+:root:has(#tabbrowser-tabs[orient="horizontal"]) #sidebar-container,
+:root:has(#tabbrowser-tabs[orient="horizontal"]) #sidebar-launcher-splitter {
+    display: none !important;
+}
+
 /* hide text labels in the urlbar and toolbar buttons (the "Not secure" label stays on purpose) */
 #urlbar-label-box,
 #nav-bar .toolbarbutton-text {
