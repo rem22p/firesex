@@ -265,7 +265,7 @@ user_pref("sidebar.main.tools", ""); //sidebar.main.tools - список вся�
 user_pref("sidebar.visibility", "expand-on-hover"); //sidebar.visibility - боковая панель вертикальных вкладок. expand-on-hover - сжимается до иконок и раскрывается при наведении, освобождает место.
 
 // ui.
-user_pref("ui.systemUsesDarkTheme", 1); //ui.systemUsesDarkTheme - принудительно выставляем темную тему (выдаем за системную).
+//ui.systemUsesDarkTheme - раньше тут принудительно стояла тёмная тема (выдавали за системную). Убрал, пусть браузер сам ловит системную: светлая система - светлый браузер, тёмная - тёмный. Не трогаю.
 user_pref("ui.new-webcompat-reporter.enabled", false); //ui.new-webcompat-reporter.enabled - кнопка 'Сообщить о проблеме с сайтом', отправляет мозиле URL и данные браузера. Не нужна.
 
 // telemetry.

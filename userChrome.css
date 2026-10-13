@@ -57,7 +57,7 @@
     display: none !important;
 }
 
-/* black / transparent chrome. --fx-bg alpha: 1 = solid black, 0.55 = see-through (needs a compositor) */
+/* black / transparent chrome (dark system theme). --fx-bg alpha: 1 = solid black, 0.55 = see-through (needs a compositor) */
 :root {
     --fx-bg: rgba(0, 0, 0, 0.9);
     --fx-field: transparent;
@@ -79,6 +79,16 @@
     --toolbarbutton-hover-background: rgba(255, 255, 255, 0.12) !important;
     --toolbarbutton-background-color-hover: rgba(255, 255, 255, 0.12) !important;
     --panel-background: #0b0b0b !important;
+}
+
+/* light system theme: same see-through look, white instead of black */
+@media (prefers-color-scheme: light) {
+    :root {
+        --fx-bg: rgba(255, 255, 255, 0.9);
+        --toolbarbutton-hover-background: rgba(0, 0, 0, 0.1) !important;
+        --toolbarbutton-background-color-hover: rgba(0, 0, 0, 0.1) !important;
+        --panel-background: #f5f5f5 !important;
+    }
 }
 
 #main-window,
